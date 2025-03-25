@@ -12,7 +12,7 @@ The heart of this program is to bring people together who might not otherwise co
 Trust is a foundation of this initiative, established through a structured referral system, safety measures, and clear community guidelines. See sections [Trust Through Ratings](#trust-through-ratings) and [Trust and Safety](#trust-and-safety).
 
 **Organizational Support:**  
-Built around communities and organizations, this program encourages people from various religious, civic, and educational organizations to connect on a personal level. While the idea starts in Winchester, Virginia with the Valley Interfaith Council, our aim is to create a replicable framework and technology for any community. See [How the Program is Organized](#how-the-program-is-organized).
+Built around communities and organizations, this program encourages people from various religious, civic, and educational organizations to connect on a personal level. While the idea starts in Winchester, Virginia with the Valley Interfaith Council (VIC), our aim is to create a replicable framework and technology for any community. See [How the Program is Organized](#how-the-program-is-organized).
 
 **Focus on Social Connections:**  
 This initiative centers on creating organic social connections through shared meals. Events are unstructured, with no agenda beyond connection. This is different from other meal-sharing programs that focus on structured dialogue.
@@ -38,7 +38,7 @@ The program is community-led and scalable with three key levels:
 
 ## Pilot Program
 
-- **Initial Community:** Winchester, Virginia via the [Valley Interfaith Council (VIC)](https://www.winchesterinterfaith.org).
+- **Initial Community:** Winchester, Virginia via the Valley Interfaith Council (VIC).
 - **Expansion Targets:** Civic organizations (Kiwanis, Rotary, Lions, Civitan) and educational institutions (Shenandoah University, Laurel Ridge Community College).
 
 ---
