@@ -1,5 +1,7 @@
 # “I am Here” Communities
 
+See also [Design Document](docs/design-document.md).
+
 ## Overview
 
 - **Mission**: The Community Home Dining Initiative aims to foster unity and understanding among diverse community groups by facilitating shared small group meals. The program is designed to help the community connect on a personal level, fostering relationships that transcend labels and preconceptions, allowing people to see each other as individuals. The program stresses curiosity over closed mindedness.
