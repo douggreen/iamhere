@@ -1,0 +1,59 @@
+{#
+ *
+ * Default theme implementation to present privatemsg thread data.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *          content.field_name to access public fields
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_privatemsg_thread()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('privatemsg/privatemsg') }}
+
+<div{{ attributes.addClass('privatemsg--thread') }}>
+  {% if content %}
+    <div class="privatemsg-thread-tags">
+      {% if content.tags.0 %}
+        <span class="privatemsg-thread-tags-title">{% trans %}Tags{% endtrans %}:</span>
+      {% else %}
+        <span class="privatemsg-thread-tags-title hidden">{% trans %}Tags{% endtrans %}:</span>
+      {% endif %}
+      <div class="privatemsg-thread-tag-list">
+        {{ thread_tags }}
+      </div>
+    </div>
+
+    <details class="form-wrapper privatemsg-add-tag-form">
+      <summary>Change tags</summary>
+      <div class="details-wrapper">
+        <div class="form--inline clearfix">
+          {{ add_tag_form }}
+        </div>
+      </div>
+    </details>
+
+    <div class="privatemsg-thread-members">
+      Between
+      {% for key, value in content.members %}
+        {% if key|first != '#' %}
+          {{ value }}<span class="delimiter">, </span>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="privatemsg-thread-messages">
+      {{ messages }}
+    </div>
+
+  {% endif %}
+
+  {% if privatemsg_message_form %}
+    {{ privatemsg_message_form }}
+  {% endif %}
+
+  {{ pager }}
+</div>

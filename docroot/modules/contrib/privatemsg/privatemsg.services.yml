@@ -1,0 +1,17 @@
+services:
+  privatemsg.common:
+    class: Drupal\privatemsg\PrivateMsgService
+    arguments: ['@entity_type.manager', '@current_user', '@database', '@datetime.time', '@config.factory']
+
+  privatemsg.autocomplete_matcher:
+    class: Drupal\privatemsg\Plugin\EntityReferenceSelection\PrivatemsgAutocompleteMatcher
+    public: false
+    arguments: ['@plugin.manager.entity_reference_selection', '@entity_type.manager', '@current_user', '@config.factory', '@privatemsg.common', '@user.data']
+    decorates: entity.autocomplete_matcher
+    decoration_priority: 1
+
+  privatemsg.drush:
+    class: Drupal\privatemsg\Drush\Commands\PrivatemsgCommands
+    tags:
+      - { name: drush.command }
+    arguments: [ '@privatemsg.common', '@entity_type.manager', '@database']

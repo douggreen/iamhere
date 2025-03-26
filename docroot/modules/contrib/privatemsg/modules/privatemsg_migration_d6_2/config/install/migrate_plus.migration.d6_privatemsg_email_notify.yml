@@ -1,0 +1,29 @@
+id: d6_privatemsg_email_notify
+label: 'Private Messages Email Notify Migration'
+migration_group: privatemsg
+migration_dependencies:
+  required:
+    - d6_user
+migration_tags:
+  - Content
+dependencies:
+  enforced:
+    module:
+      - privatemsg_migration_d6_2
+source:
+  plugin: table
+  source_module: migrate_plus
+  table_name: pm_setting
+  id_fields:
+    id:
+      type: integer
+  fields:
+    id: id
+    setting: setting
+    value: value
+process:
+  id: id
+  value: value
+  setting: setting
+destination:
+  plugin: privatemsg_email_notify

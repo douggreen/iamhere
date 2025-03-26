@@ -1,0 +1,35 @@
+id: d6_privatemsg_blocked
+label: 'Private Messages Blocked Users Migration'
+migration_group: privatemsg
+migration_dependencies:
+  required:
+    - d6_user
+migration_tags:
+  - Content
+dependencies:
+  enforced:
+    module:
+      - privatemsg_migration_d6
+source:
+  plugin: table
+  source_module: migrate_plus
+  table_name: pm_block_user
+  id_fields:
+    author:
+      type: integer
+    recipient:
+      type: integer
+process:
+  who: recipient
+  blocked: author
+destination:
+  plugin: table
+  table_name: pm_block_user
+  id_fields:
+    who:
+      type: integer
+    blocked:
+      type: integer
+  fields:
+    who: who
+    blocked: blocked

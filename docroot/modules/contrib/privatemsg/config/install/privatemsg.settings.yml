@@ -1,0 +1,4 @@
+remove_after: '30'
+allowed_roles: {  }
+moderator_role: ''
+unblockable_roles: {  }

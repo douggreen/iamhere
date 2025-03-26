@@ -1,0 +1,71 @@
+.privatemsg-author-name {
+  padding-right: 1rem;
+}
+
+.privatemsg-message-column {
+  margin-bottom: 1rem;
+}
+
+.privatemsg-message-date {
+  padding-right: 1rem;
+}
+
+.privatemsg-thread-members {
+  margin-bottom: 1rem;
+}
+
+.privatemsg-unread-thread td {
+  font-weight: bold;
+}
+
+.privatemsg-unread-thread .views-field-subject a::after {
+  padding-left: 4px;
+  content: "new";
+  color: red;
+}
+
+.privatemsg-message .privatemsg-message-unread-marker {
+  display: none;
+  padding-right: 1rem;
+  color: red;
+  font-weight: bold;
+}
+
+.privatemsg-message-unread .privatemsg-message-unread-marker {
+  display: inline !important;
+}
+
+.privatemsg-message-deleted {
+  color: gray;
+  font-style: italic;
+}
+
+.privatemsg-message .privatemsg-message-recipient-unread-marker {
+  display: none;
+  padding-right: 1rem;
+  color: red;
+  font-weight: bold;
+}
+
+.privatemsg-message-recipient-unread
+  .privatemsg-message-recipient-unread-marker {
+  display: inline !important;
+}
+
+.privatemsg-thread-tags {
+  display: flex;
+}
+
+.privatemsg-thread-tags .privatemsg-thread-tag-list {
+  padding-left: 4px;
+}
+
+.privatemsg-claim-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: red;
+}
+
+.privatemsg-block-user {
+  padding-right: 1rem;
+}

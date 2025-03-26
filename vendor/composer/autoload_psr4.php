@@ -66,6 +66,7 @@ return array(
     'PhpTuf\\ComposerStager\\' => array($vendorDir . '/php-tuf/composer-stager/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'Peast\\' => array($vendorDir . '/mck89/peast/lib/Peast'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'OpenAI\\' => array($vendorDir . '/openai-php/client/src'),
     'Mtownsend\\XmlToArray\\' => array($vendorDir . '/mtownsend/xml-to-array/src'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),

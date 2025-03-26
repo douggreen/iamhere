@@ -1,0 +1,18 @@
+terms_of_use.settings:
+  type: config_object
+  label: 'Terms Of Use Settings'
+  mapping:
+    terms_of_use_node:
+      type: integer
+    terms_of_use_label_name:
+      type: label
+      label: 'Label for the fieldset'
+      translatable: true
+    terms_of_use_label_checkbox:
+      type: label
+      label: 'Label for the checkbox'
+      translatable: true
+    terms_of_use_open_link_in_new_window:
+      type: boolean
+    terms_of_use_collapsed:
+      type: boolean

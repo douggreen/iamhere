@@ -1,0 +1,18 @@
+name: Private Messages
+description: Allow private messages between users.
+type: module
+package: Private Messages
+core_version_requirement: ^10 || ^11
+configure: privatemsg.settings
+dependencies:
+  - drupal:block
+  - drupal:datetime
+  - drupal:taxonomy
+  - drupal:user
+  - drupal:views
+  - views_bulk_operations:views_bulk_operations
+
+# Information added by Drupal.org packaging script on 2025-03-10
+version: '2.0.0-rc12'
+project: 'privatemsg'
+datestamp: 1741615069

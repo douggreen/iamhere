@@ -1,0 +1,33 @@
+id: d6_privatemsg_attachments
+label: 'Private Messages Attachments Migration'
+migration_group: privatemsg
+migration_dependencies:
+  required:
+    - d6_file
+    - d6_privatemsg_message
+migration_tags:
+  - Content
+dependencies:
+  enforced:
+    module:
+      - privatemsg_migration_d6_2
+source:
+  plugin: table
+  source_module: migrate_plus
+  table_name: pm_attachments
+  id_fields:
+    fid:
+      type: integer
+    mid:
+      type: integer
+process:
+  mid:
+    plugin: migration_lookup
+    source: mid
+    migration: d6_privatemsg_message
+  fid:
+    plugin: migration_lookup
+    source: fid
+    migration: d6_file
+destination:
+  plugin: privatemsg_attachments

@@ -1,0 +1,22 @@
+privatemsg.settings:
+  type: config_object
+  label: 'Privatemsg settings'
+  mapping:
+    remove_after:
+      type: string
+      label: 'Remove deleted messages from DB after (days)'
+    allowed_roles:
+      label: 'Allow send private messages for these roles'
+      type: sequence
+      sequence:
+        type: string
+        label: 'Role ID'
+    moderator_role:
+      label: 'Moderator role for claims'
+      type: string
+    unblockable_roles:
+      label: 'Users cannot block another users with these roles'
+      type: sequence
+      sequence:
+        type: string
+        label: 'Role ID'

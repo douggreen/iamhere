@@ -1,0 +1,11 @@
+name: 'Terms of Use'
+description: 'Adds terms of Use to the registration page.'
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
+type: module
+package: 'User registration'
+configure: terms_of_use.settings_form
+
+# Information added by Drupal.org packaging script on 2024-05-11
+version: '8.x-2.4'
+project: 'terms_of_use'
+datestamp: 1715437325

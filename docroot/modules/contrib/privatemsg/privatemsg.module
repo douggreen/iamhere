@@ -1,0 +1,469 @@
+<?php
+
+/**
+ * @file
+ * Module file for privatemsg module.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Url;
+use Drupal\privatemsg\Entity\PrivatemsgMessage;
+use Drupal\privatemsg\Form\PrivatemsgAddTagForm;
+use Drupal\user\Entity\User;
+use Drupal\user\UserInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+/**
+ * Implements hook_help().
+ */
+function privatemsg_help($route_name) {
+  if ($route_name === 'help.page.privatemsg') {
+    $text = file_get_contents(__DIR__ . '/README.md');
+    return '<pre>' . Html::escape($text) . '</pre>';
+  }
+  return '';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function privatemsg_theme() {
+  return [
+    'privatemsg_thread' => [
+      'render element' => 'elements',
+    ],
+    'privatemsg_message' => [
+      'render element' => 'elements',
+    ],
+    'views_exposed_form__all_privatemsg_threads__page_1' => [
+      'render element' => 'form',
+    ],
+  ];
+}
+
+/**
+ * Returns pager array.
+ */
+function _privatemsg_pager_array(array $items, int $itemsPerPage): ?array {
+  $total = \count($items);
+  $currentPage = \Drupal::service('pager.manager')->createPager($total, $itemsPerPage)->getCurrentPage();
+  $chunks = \array_chunk($items, $itemsPerPage);
+  $currentPageItemsRaw = $chunks[$currentPage];
+
+  foreach ($currentPageItemsRaw as $currentPageItem) {
+    $currentPageItems[$currentPageItem->id()] = $currentPageItem;
+  }
+
+  return $currentPageItems;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function privatemsg_preprocess_privatemsg_thread(&$variables) {
+  $variables['content'] = [];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  $thread = $variables['elements']['#privatemsg_thread'];
+  $messages = $thread->getMessages();
+  $messages = _privatemsg_pager_array($messages, 50);
+  $private_messages = [];
+  foreach ($messages as $message) {
+    $private_messages[] = \Drupal::entityTypeManager()->getViewBuilder('privatemsg_message')->view($message);
+  }
+  $variables['messages'] = $private_messages;
+  $variables['pager'] = ['#type' => 'pager'];
+
+  $current_user = \Drupal::currentUser();
+  if ($current_user->hasPermission('privatemsg write messages') && $thread->isMember($current_user->id())) {
+    $entity = PrivatemsgMessage::create();
+    $message_form = \Drupal::service('entity.form_builder')->getForm($entity, 'add');
+    $variables['privatemsg_message_form'] = $message_form;
+  }
+
+  $add_tag_form = \Drupal::formBuilder()->getForm(PrivatemsgAddTagForm::class);
+  $variables['add_tag_form'] = $add_tag_form;
+
+  if (isset($variables['elements']['tags']['#items'])) {
+    $tags = $variables['elements']['tags']['#items']->referencedEntities();
+    $output = '';
+    foreach ($tags as $tag) {
+      $output .= '<a href="/messages?tags_target_id=' . $tag->id() . '">' . $tag->getName() . '</a>, ';
+    }
+    if (!empty($output)) {
+      $variables['thread_tags'] = Markup::create($output);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function privatemsg_preprocess_privatemsg_message(&$variables) {
+  $variables['content'] = [];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+  $variables['#cache']['max-age'] = 0;
+
+  $current_user = \Drupal::currentUser();
+
+  /** @var \Drupal\privatemsg\Entity\PrivatemsgMessage $message */
+  $message = $variables['elements']['#privatemsg_message'];
+  if ($message) {
+    $message_deleted_time = $message->getMarkAsDeletedTime();
+    if ($message_deleted_time) {
+      $variables['marked_as_deleted'] = TRUE;
+      $message_owner = User::load($message->getOwnerId());
+      if ($message_owner) {
+        $variables['message_owner'] = $message_owner->getAccountName();
+      }
+      $variables['message_deleted_time'] = \Drupal::service('date.formatter')->format($message_deleted_time, 'medium', NULL);
+
+      if ($current_user->hasPermission('privatemsg view deleted messages')) {
+        $variables['can_view_deleted_messages'] = TRUE;
+      }
+
+      return;
+    }
+
+    /** @var \Drupal\privatemsg\PrivateMsgServiceInterface $privatemsg_service */
+    $privatemsg_service = \Drupal::service('privatemsg.common');
+    /** @var \Drupal\privatemsg\Entity\PrivatemsgThread $thread */
+    $thread = $privatemsg_service->getThreadFromMessage($message->id(), $current_user->id());
+
+    if ($thread) {
+      if ($current_user->hasPermission('privatemsg delete own messages') && $message->getOwnerId() === $current_user->id()) {
+        $url_object = Url::fromRoute('privatemsg.delete_message', [
+          'mid' => $message->id(),
+          'thread_id' => $thread->id(),
+        ]);
+        if ($url_object) {
+          $variables['delete_message_link'] = $url_object->toString();
+        }
+      }
+
+      if ($current_user->hasPermission('privatemsg block users') && $message->getOwnerId() !== $current_user->id()) {
+        $members = $thread->getMembers();
+        if (count($members) < 3) {
+          $url_object = Url::fromRoute('privatemsg.block_user', [
+            'user' => $message->getOwnerId(),
+          ]);
+          $variables['block_user_id'] = $message->getOwnerId();
+          if ($url_object) {
+            $variables['block_user'] = $url_object->toString();
+          }
+          $can_be_blocked = $privatemsg_service->canBeBlocked($message->getOwnerId());
+          if ($can_be_blocked) {
+            $isBlocked = $privatemsg_service->isUserBlocked($current_user->id(), $message->getOwnerId());
+            $isBlocked ? $variables['block_user_text'] = t('unblock') : $variables['block_user_text'] = t('block');
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function privatemsg_field_views_data_alter(array &$data) {
+  $data['views']['privatemsg_messages_counter_views_field'] = [
+    'title' => t('Count of messages in the thread.'),
+    'group' => t('PrivateMsg Thread'),
+    'help' => t('Count of messages in the thread.'),
+    'field' => [
+      'id' => 'privatemsg_messages_counter_views_field',
+    ],
+  ];
+  return $data;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function privatemsg_views_pre_render(ViewExecutable $view) {
+  if ($view->storage->id() === 'all_privatemsg_threads') {
+    $view->element['#attached']['library'][] = 'privatemsg/privatemsg';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function privatemsg_preprocess_views_view_table(&$variables) {
+  $view = $variables['view'];
+  if ($view->id() === 'all_privatemsg_threads' && $view->current_display === 'page_1') {
+    $current_user = \Drupal::entityTypeManager()->getStorage('user')->load(\Drupal::currentUser()->id());
+    $is_messages_enabled = \Drupal::service('user.data')->get('privatemsg', $current_user->id(), 'enable');
+
+    if ($is_messages_enabled) {
+      $rows = $variables['rows'];
+      foreach ($rows as $id => $row) {
+        $entity = $variables['result'][$id]->_entity;
+        $current_user = \Drupal::currentUser();
+        /** @var \Drupal\privatemsg\PrivateMsgServiceInterface $privatemsg_service */
+        $privatemsg_service = \Drupal::service('privatemsg.common');
+        $last_access_time = $privatemsg_service->getThreadGroupLastAccessTime($current_user->id(), $entity->getGroup());
+        $messages = $entity->getMessages();
+        foreach ($messages as $message) {
+          if ($last_access_time <= $message->getCreatedTime() && $message->getOwnerId() != $current_user->id()) {
+            $variables['rows'][$id]['attributes']->addClass('privatemsg-unread-thread');
+          }
+        }
+      }
+    }
+    else {
+      throw new NotFoundHttpException();
+    }
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function privatemsg_cron() {
+  $days = \Drupal::config('privatemsg.settings')->get('remove_after');
+  if ($days) {
+    $mark_as_deleted_messages_ids = \Drupal::entityQuery('privatemsg_message')
+      ->accessCheck(FALSE)
+      ->condition('deleted', '', '<>')
+      ->execute();
+    $messages_to_delete = \Drupal::entityTypeManager()->getStorage('privatemsg_message')->loadMultiple($mark_as_deleted_messages_ids);
+    /** @var \Drupal\privatemsg\Entity\PrivatemsgMessage $message */
+    foreach ($messages_to_delete as $message) {
+      $remove_after_time = $days * 3600;
+      $current_time = \Drupal::time()->getRequestTime();
+      $deleted_time = $message->getMarkAsDeletedTime();
+      if (($deleted_time + $remove_after_time) < $current_time) {
+        $threads = \Drupal::entityTypeManager()->getStorage('privatemsg_thread')->loadByProperties([
+          'private_messages' => $message->id(),
+        ]);
+        foreach ($threads as $thread) {
+          /** @var \Drupal\privatemsg\Entity\PrivatemsgThread $thread */
+          $thread->removeMessageFromThread($message->id());
+          $thread->save();
+          $message->delete();
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_views_exposed_form_alter().
+ */
+function privatemsg_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] === 'views-exposed-form-all-privatemsg-threads-page-1') {
+    $form['subject']['#title'] = t('Subject');
+    $form['uid']['#title'] = t('Members');
+    $form['uid']['#selection_handler'] = 'default:privatemsg_views';
+    $form['tags_target_id']['#title'] = t('Tags');
+
+    if (isset($form['tags_target_id'])) {
+      $options = ['' => (string) \t('- Any -')];
+      /** @var \Drupal\privatemsg\PrivateMsgServiceInterface $privatemsg_service */
+      $privatemsg_service = \Drupal::service('privatemsg.common');
+      $user_threads = $privatemsg_service->getThreadsForUser(\Drupal::currentUser()->id());
+      foreach ($user_threads as $thread) {
+        $tags[] = $thread->getTags();
+      }
+      // Remove empty elements.
+      if (!empty($tags)) {
+        $tags = array_filter($tags);
+        // Flat array.
+        $tags = array_merge(...$tags);
+        foreach ($tags as $tag) {
+          $options[$tag->id()] = $tag->getName();
+        }
+        $form['tags_target_id'] = [
+          '#type' => 'select',
+          '#title' => \t('Tags'),
+          '#options' => $options,
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function privatemsg_mail(string $key, array &$message, array $params) {
+  if ($key === 'privatemsg') {
+    $message['subject'] = $params['subject'];
+    $message['body'][] = $params['message'];
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function privatemsg_taxonomy_term_insert(EntityInterface $entity) {
+  if ($entity->bundle() === 'privatemsg_tags' && $entity->get('field_privatemsg_tag_author')->isEmpty()) {
+    $entity->set('field_privatemsg_tag_author', \Drupal::currentUser()->id());
+    $entity->save();
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function privatemsg_preprocess_views_view_field(&$variables) {
+  $view = $variables['view'];
+  $field = $variables['field'];
+
+  if ($view->id() === 'all_privatemsg_threads'
+    && $view->current_display === 'page_1'
+    && $field->field === 'tags_target_id'
+    && isset($variables['output'])
+    && !empty($variables['output'])
+  ) {
+    $raw_output = $variables['output']->__toString();
+    $output = str_replace('/taxonomy/term/', '/messages?tags_target_id=', $raw_output);
+    $variables['output'] = Markup::create($output);
+  }
+
+  if ($view->id() === 'all_privatemsg_threads'
+    && $view->current_display === 'page_1'
+    && $field->field === 'subject'
+    && isset($variables['output'])
+    && !empty($variables['output'])
+  ) {
+    $raw_output = $variables['output']->__toString();
+    preg_match_all('/<a[^>]+href=([\'"])(?<href>.+?)\1[^>]*>/i', $raw_output, $result);
+    if ($result) {
+      $link = $result['href'][0];
+      /** @var \Drupal\privatemsg\Entity\PrivatemsgThread $thread */
+      $thread = $variables["row"]->_entity;
+      if ($link && $thread) {
+        $privatemsg_service = \Drupal::service('privatemsg.common');
+        $last_access_time = $privatemsg_service->getThreadGroupLastAccessTime(\Drupal::currentUser()->id(), $thread->getGroup());
+        $messages = $thread->getMessages();
+        $last_unread_message_number = 1;
+        // Find last unread message if it exists.
+        foreach ($messages as $key => $message) {
+          if ($last_access_time <= $message->getCreatedTime() && $message->getOwnerId() !== \Drupal::currentUser()->id()) {
+            $last_unread_message_number = $key;
+            break;
+          }
+        }
+        // If not new unread messages than get page only.
+        if ($last_unread_message_number === 1) {
+          $page = (int) (count($messages) / 50);
+        }
+        // Get page of last unread message.
+        else {
+          $page = (int) ($last_unread_message_number / 50);
+        }
+        if ($page > 0) {
+          $new_link = $link . '?page=' . $page;
+          $output = str_replace($link, $new_link, $raw_output);
+          $variables['output'] = Markup::create($output);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function privatemsg_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if (($view->storage->id() === 'all_privatemsg_threads')) {
+    // Remove duplicates.
+    // See https://www.drupal.org/project/paragraphs/issues/2941499
+    // And https://www.drupal.org/project/drupal/issues/2993688
+    $query->addField('privatemsg_thread', 'id', '', ['function' => 'groupby']);
+    $query->addGroupBy('id');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function privatemsg_form_views_form_all_privatemsg_threads_page_1_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['header']['views_bulk_operations_bulk_form']['select_all']['#access'] = FALSE;
+  $form['header']['views_bulk_operations_bulk_form']['multipage']['#access'] = FALSE;
+  $form['actions']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function privatemsg_form_user_form_alter(&$form, FormStateInterface $form_state) {
+  if ($form_state->getFormObject()->getOperation() === 'default') {
+    $form['privatemsg'] = [
+      '#type' => 'details',
+      '#title' => t('Private Messages'),
+      '#open' => TRUE,
+      '#weight' => 5,
+    ];
+    $account = $form_state->getFormObject()->getEntity();
+    if (!\Drupal::currentUser()->isAnonymous() && $account->id()) {
+      $privatemsg_enable = \Drupal::service('user.data')->get('privatemsg', $account->id(), 'enable');
+      $privatemsg_notify = \Drupal::service('user.data')->get('privatemsg', $account->id(), 'notify');
+    }
+    $form['privatemsg']['privatemsg_enable'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Enable private messages'),
+      '#description' => t('Disabling private messages prevents you from sending or receiving messages from other users.'),
+      '#default_value' => $privatemsg_enable ?? TRUE,
+    ];
+    $form['privatemsg']['privatemsg_notify'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Receive email notification for incoming private messages'),
+      '#default_value' => $privatemsg_notify ?? TRUE,
+    ];
+    $form['actions']['submit']['#submit'][] = 'privatemsg_user_profile_form_submit';
+  }
+}
+
+/**
+ * Submit callback for the user profile form to save the privatemsg setting.
+ */
+function privatemsg_user_profile_form_submit($form, FormStateInterface $form_state) {
+  $account = $form_state->getFormObject()->getEntity();
+  if ($account->id() && $form_state->hasValue('privatemsg_enable')) {
+    \Drupal::service('user.data')->set('privatemsg', $account->id(), 'enable', (int) $form_state->getValue('privatemsg_enable'));
+  }
+  if ($account->id() && $form_state->hasValue('privatemsg_notify')) {
+    \Drupal::service('user.data')->set('privatemsg', $account->id(), 'notify', (int) $form_state->getValue('privatemsg_notify'));
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function privatemsg_entity_extra_field_info() {
+  $fields['user']['user']['display']['privatemsg'] = [
+    'label' => t('Send this user a private message'),
+    'weight' => 8,
+    'visible' => TRUE,
+  ];
+
+  return $fields;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function privatemsg_user_view(array &$build, UserInterface $account, EntityViewDisplayInterface $display) {
+  if ($component = $display->getComponent('privatemsg')) {
+    $uid = $account->id();
+    $build['privatemsg'] = [
+      '#type' => 'container',
+      '#markup' => "<a href='/messages/new/$uid'>" . t('Send this user a private message') . '</a>',
+      '#weight' => $component['weight'],
+    ];
+  }
+}

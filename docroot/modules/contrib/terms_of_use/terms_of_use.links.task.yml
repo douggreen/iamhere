@@ -1,0 +1,4 @@
+terms_of_use.settings_form:
+  route_name: terms_of_use.settings_form
+  title: Settings
+  base_route: terms_of_use.settings_form

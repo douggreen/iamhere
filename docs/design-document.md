@@ -104,14 +104,14 @@ Each user can only be a Community Organizer for **one** Community.
 
 - **Friends** can create Events.
 - Events can be marked as hosted in homes or participating restaurants.
-- Friends can **request to join** events using the **Flag module**.
+- Friends can **request to join** events using the **Flag module**. @todo: review the Flag module, this may not be the best current option.
 - Hosts can **approve/decline** each RSVP.
 
 ### Ratings:
 - Guests rate the Event (1–5 stars)
 - Hosts are rated by guests
 - Friends are rated by Hosts and peers
-- Uses **Voting API + Fivestar**
+- Uses **Voting API + Fivestar**. @todo: review this recommendation, this may not be the best current option.
 - Aggregated ratings displayed on:
   - Event node
   - Host user profile
@@ -218,7 +218,6 @@ Guides will be managed as content (pages or nodes), included in site recipes, an
 - All configuration exported using `drush cex` to `config/sync` and tracked in Git
 
 ### Key Contributed Modules:
-- Admin Toolbar
 - Pathauto + Token
 - Address
 - Webform

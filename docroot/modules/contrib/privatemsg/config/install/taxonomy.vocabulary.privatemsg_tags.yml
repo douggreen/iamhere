@@ -1,0 +1,7 @@
+langcode: und
+status: true
+dependencies: {  }
+name: 'Privatemsg Tags'
+vid: privatemsg_tags
+description: ''
+weight: 0

@@ -1,0 +1,32 @@
+id: d7_privatemsg_message
+label: 'Private Messages Message Migration'
+migration_group: privatemsg
+migration_dependencies:
+  required:
+    - d7_user
+    - d7_privatemsg_email_notify
+migration_tags:
+  - Content
+dependencies:
+  enforced:
+    module:
+      - privatemsg_migration_d7
+source:
+  plugin: privatemsg_message
+  source_module: privatemsg_migration_d7
+process:
+  owner:
+    id: mid
+    plugin: migration_lookup
+    migration: d7_user
+    source: author
+    no_stub: true
+  message/value: body
+  message/format:
+    plugin: migration_lookup
+    migration: d7_filter_format
+    source: format
+  created: timestamp
+destination:
+  plugin: entity:privatemsg_message
+  destination_module: privatemsg

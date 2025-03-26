@@ -1,0 +1,27 @@
+entity.privatemsg_message.settings:
+  title: 'Settings'
+  route_name: entity.privatemsg_message.settings
+  base_route: entity.privatemsg_message.settings
+
+entity.privatemsg_thread.settings:
+  title: 'Settings'
+  route_name: entity.privatemsg_thread.settings
+  base_route: entity.privatemsg_thread.settings
+
+entity.privatemsg_message.add:
+  route_name: entity.privatemsg_message.add
+  base_route: view.all_privatemsg_threads.page_1
+  title: 'New message'
+  weight: 1
+
+entity.privatemsg_thread.view:
+  route_name: entity.privatemsg_thread.canonical
+  base_route: view.all_privatemsg_threads.page_1
+  title: 'View message'
+  weight: 2
+
+privatemsg.block_user_form:
+  route_name: privatemsg.block_user_form
+  base_route: view.all_privatemsg_threads.page_1
+  title: 'Blocked users'
+  weight: 3

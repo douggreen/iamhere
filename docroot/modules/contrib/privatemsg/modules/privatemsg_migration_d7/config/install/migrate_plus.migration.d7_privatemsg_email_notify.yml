@@ -1,0 +1,26 @@
+id: d7_privatemsg_email_notify
+label: 'Private Messages Email Notify Migration'
+migration_group: privatemsg
+migration_dependencies:
+  required:
+    - d7_user
+migration_tags:
+  - Content
+dependencies:
+  enforced:
+    module:
+      - privatemsg_migration_d7
+source:
+  plugin: table
+  source_module: migrate_plus
+  table_name: pm_email_notify
+  id_fields:
+    user_id:
+      type: integer
+    email_notify_is_enabled:
+      type: integer
+process:
+  user_id: user_id
+  email_notify_is_enabled: email_notify_is_enabled
+destination:
+  plugin: privatemsg_email_notify

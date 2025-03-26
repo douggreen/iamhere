@@ -1,0 +1,157 @@
+<?php
+
+/**
+ * @file
+ * Holds install and update hooks for the Private Message module.
+ */
+
+use Drupal\Core\Config\FileStorage;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\user\Entity\Role;
+
+/**
+ * Implements hook_schema().
+ */
+function privatemsg_schema() {
+  $schema['pm_thread_history'] = [
+    'description' => 'A record of which {users} have read which {node}s.',
+    'fields' => [
+      'uid' => [
+        'description' => 'The {users}.uid that read the {privatemsg_threads} id.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'thread_group' => [
+        'description' => 'The group of threads that was read.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'access_timestamp' => [
+        'description' => 'The Unix timestamp at which the read occurred.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'delete_timestamp' => [
+        'description' => 'The Unix timestamp at which the delete occurred.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['uid', 'thread_group'],
+  ];
+
+  $schema['pm_block_user'] = [
+    'description' => '{pm_block_user} holds data mapping which authors who cannot messages to which recipients',
+    'fields' => [
+      'who' => [
+        'description' => 'ID of the user who wants to block another user',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'blocked' => [
+        'description' => 'ID of the blocked user',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+    ],
+    'primary key' => ['who', 'blocked'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function privatemsg_install() {
+  $user_storage = \Drupal::entityTypeManager()->getStorage('user');
+  $userIDs = $user_storage->getQuery()
+    ->condition('uid', 0, '>')
+    ->accessCheck(FALSE)
+    ->execute();
+  foreach ($userIDs as $userID) {
+    \Drupal::service('user.data')->set('privatemsg', $userID, 'enable', 1);
+    \Drupal::service('user.data')->set('privatemsg', $userID, 'notify', 1);
+  }
+
+  $role_object = Role::load('authenticated');
+  if ($role_object) {
+    $role_object->grantPermission('privatemsg write messages');
+    $role_object->grantPermission('privatemsg send to role');
+    $role_object->grantPermission('privatemsg block users');
+    $role_object->grantPermission('privatemsg delete own messages');
+    $role_object->grantPermission('privatemsg use messages actions');
+    $role_object->save();
+  }
+
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('privatemsg.settings');
+  $roles = Role::loadMultiple();
+  $roles_options = [];
+  foreach ($roles as $role) {
+    $role_id = $role->id();
+    $roles_options[$role_id] = $role_id;
+  }
+  unset($roles_options['anonymous']);
+  unset($roles_options['authenticated']);
+  $config->set('allowed_roles', array_values(array_filter($roles_options)));
+  $config->save();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function privatemsg_uninstall($is_syncing) {
+  $field_storage = FieldStorageConfig::loadByName('taxonomy_term', 'field_privatemsg_tag_author');
+  if ($field_storage) {
+    $field_storage->delete();
+  }
+  $field = FieldConfig::loadByName('taxonomy_term', 'taxonomy_term', 'field_privatemsg_tag_author');
+  if ($field) {
+    $field->delete();
+  }
+
+  $vocabulary = Vocabulary::load('privatemsg_tags');
+  if ($vocabulary) {
+    $vocabulary->delete();
+  }
+
+  \Drupal::service('config.factory')->getEditable('views.view.all_privatemsg_threads')->delete();
+}
+
+/**
+ * Add new field updated_custom.
+ */
+function privatemsg_update_10001() {
+  $field_storage_definition = BaseFieldDefinition::create('timestamp')
+    ->setLabel(t('Updated (custom)'))
+    ->setDescription(t('The most recent time at which the thread was updated'));
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('updated_custom', 'privatemsg_thread', 'privatemsg', $field_storage_definition);
+
+  $threads = \Drupal::entityTypeManager()->getStorage('privatemsg_thread')->loadMultiple();
+  /** @var \Drupal\privatemsg\Entity\PrivatemsgThreadInterface $thread */
+  foreach ($threads as $thread) {
+    $updated = $thread->get('updated')->value;
+    $thread->set('updated_custom', $updated);
+    $thread->save();
+  }
+
+  $path = \Drupal::service('extension.list.module')->getPath('privatemsg') . '/config/install';
+  $source = new FileStorage($path);
+  $config_name = 'views.view.all_privatemsg_threads';
+  /** @var \Drupal\Core\Config\StorageInterface $active_storage */
+  $active_storage = \Drupal::service('config.storage');
+  $active_storage->write($config_name, $source->read($config_name));
+}

@@ -1,0 +1,34 @@
+id: d7_privatemsg_thread
+label: 'Private Messages Thread Migration'
+migration_group: privatemsg
+migration_dependencies:
+  required:
+    - d7_user
+    - d7_privatemsg_email_notify
+    - d7_privatemsg_message
+migration_tags:
+  - Content
+dependencies:
+  enforced:
+    module:
+      - privatemsg_migration_d7
+source:
+  plugin: privatemsg_thread_source
+  source_module: privatemsg_migration_d7
+process:
+  members:
+    plugin: migration_lookup
+    migration: d7_user
+    source: members
+    no_stub: true
+  messages:
+    plugin: migration_lookup
+    migration: d7_privatemsg_message
+    source: mids
+    no_stub: true
+  subject: subject
+  updated_custom: updated_custom
+  tags: tags
+  is_new: is_new
+destination:
+  plugin: privatemsg_thread

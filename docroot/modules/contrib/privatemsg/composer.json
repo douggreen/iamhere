@@ -1,0 +1,21 @@
+{
+    "name": "drupal/privatemsg",
+    "description": "Allow private messages between users.",
+    "type": "drupal-module",
+    "homepage": "https://www.drupal.org/project/privatemsg",
+    "authors": [
+        {
+            "name": "Andrei Ivnitskii",
+            "homepage": "https://www.drupal.org/u/ivnish",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/privatemsg",
+        "source": "https://git.drupalcode.org/project/privatemsg"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "drupal/views_bulk_operations": "^4.2"
+    }
+}

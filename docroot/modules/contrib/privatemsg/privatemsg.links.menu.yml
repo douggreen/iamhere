@@ -1,0 +1,24 @@
+entity.privatemsg_message.settings:
+  title: 'PrivateMsg Message Settings'
+  description: 'Configure a Privatemsg Message entity type.'
+  route_name:  entity.privatemsg_message.settings
+  parent: system.admin_structure
+
+entity.privatemsg_thread.settings:
+  title: 'PrivateMsg Thread Settings'
+  description: 'Configure a Privatemsg Thread entity type.'
+  route_name:  entity.privatemsg_thread.settings
+  parent: system.admin_structure
+
+privatemsg.settings:
+  title: Private Messages Settings
+  parent: system.admin_config_content
+  route_name: privatemsg.settings
+  weight: 10
+
+privatemsg.account_menu_item:
+  title: Private Messages (N)
+  route_name: view.all_privatemsg_threads.page_1
+  menu_name: account
+  class: Drupal\privatemsg\Plugin\Menu\PrivatemsgAccountMenuItem
+  weight: -20

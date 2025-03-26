@@ -1,0 +1,16 @@
+name: Private Messages Migration From Drupal 6 (6.x-2.x)
+type: module
+description: Provides a migration for Private Messages module.
+package: Migration
+core_version_requirement: ^10 || ^11
+dependencies:
+  - privatemsg:privatemsg
+  - drupal:migrate
+  - drupal:migrate_drupal
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+
+# Information added by Drupal.org packaging script on 2025-03-10
+version: '2.0.0-rc12'
+project: 'privatemsg'
+datestamp: 1741615069

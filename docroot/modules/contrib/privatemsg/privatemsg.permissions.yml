@@ -1,0 +1,22 @@
+administer privatemsg:
+  title: 'Administer privatemsg message settings'
+  restrict access: true
+
+privatemsg use messages actions:
+  title: 'Use messages actions'
+  description: 'Mark as read, delete, etc'
+
+privatemsg write messages:
+  title: 'Write and view messages'
+
+privatemsg delete own messages:
+  title: 'Delete own messages'
+
+privatemsg view deleted messages:
+  title: 'View deleted messages'
+
+privatemsg send to role:
+  title: 'Allow send messages to roles'
+
+privatemsg block users:
+  title: 'Allow to block another users'

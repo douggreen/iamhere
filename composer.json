@@ -33,15 +33,21 @@
         "drupal/drupal_cms_project": "~1.1.0",
         "drupal/drupal_cms_seo_tools": "~1.1.0",
         "drupal/drupal_cms_starter": "~1.1.0",
+        "drupal/flag": "^4.0@beta",
+        "drupal/privatemsg": "^2.0@RC",
         "drupal/project_browser": "@beta",
         "drupal/recipe_installer_kit": "^1-alpha3@alpha",
+        "drupal/select_or_other": "^4.2",
+        "drupal/smtp": "^1.4",
+        "drupal/terms_of_use": "^2.4",
+        "drupal/views_bulk_operations": "^4.3",
         "drupal/webform": "@beta",
         "drush/drush": "^13.4"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "beta",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {

@@ -1,0 +1,33 @@
+id: d6_privatemsg_message
+label: 'Private Messages Message Migration'
+migration_group: privatemsg
+migration_dependencies:
+  required:
+    - d6_user
+    - d6_privatemsg_email_notify
+migration_tags:
+  - Drupal 6
+  - Content
+dependencies:
+  enforced:
+    module:
+      - privatemsg_migration_d6
+source:
+  plugin: privatemsg_message
+  source_module: privatemsg_migration_d6
+process:
+  id: mid
+  owner:
+    plugin: migration_lookup
+    migration: d6_user
+    source: author
+    no_stub: true
+  message/value: body
+  message/format:
+    plugin: migration_lookup
+    migration: d6_filter_format
+    source: format
+  created: timestamp
+destination:
+  plugin: entity:privatemsg_message
+  destination_module: privatemsg

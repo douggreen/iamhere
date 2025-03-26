@@ -1,0 +1,10 @@
+privatemsg:
+  css:
+    theme:
+      css/privatemsg.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - core/jquery.ui.dialog
+    - core/drupal.dialog.ajax

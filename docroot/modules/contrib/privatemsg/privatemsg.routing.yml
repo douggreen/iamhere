@@ -1,0 +1,73 @@
+entity.privatemsg_message.settings:
+  path: 'admin/structure/privatemsg-message'
+  defaults:
+    _form: '\Drupal\privatemsg\Form\PrivatemsgMessageSettingsForm'
+    _title: 'PrivateMsg Message Settings'
+  requirements:
+    _permission: 'administer privatemsg'
+
+entity.privatemsg_thread.settings:
+  path: 'admin/structure/privatemsg-thread'
+  defaults:
+    _form: '\Drupal\privatemsg\Form\PrivatemsgThreadSettingsForm'
+    _title: 'PrivateMsg Thread Settings'
+  requirements:
+    _permission: 'administer privatemsg'
+
+entity.privatemsg_message.canonical:
+  path: '/privatemsg_message/{privatemsg_message}'
+  defaults:
+    _entity_view: 'privatemsg_message'
+    _title: 'Private Messages'
+  requirements:
+    _entity_access: 'privatemsg_message.view'
+    _permission: 'administer privatemsg'
+
+entity.privatemsg_thread.canonical:
+  path: '/messages/view/{privatemsg_thread}'
+  defaults:
+    _entity_view: 'privatemsg_thread'
+  requirements:
+    _entity_access: 'privatemsg_thread.view'
+    _permission: 'privatemsg write messages'
+
+entity.privatemsg_message.add:
+  path: '/messages/new/{user}'
+  defaults:
+    _entity_form: privatemsg_message.add
+    _title: 'Write new message'
+    user: NULL
+  requirements:
+    _permission: 'privatemsg write messages'
+
+privatemsg.settings:
+  path: '/admin/config/content/privatemsg-settings'
+  defaults:
+    _title: 'Private Messages Settings'
+    _form: 'Drupal\privatemsg\Form\PrivatemsgSettingsForm'
+  requirements:
+    _permission: 'administer privatemsg'
+
+privatemsg.delete_message:
+  path: '/messages/delete/{thread_id}/{mid}'
+  defaults:
+    _title: 'Delete message'
+    _controller: '\Drupal\privatemsg\Controller\PrivatemsgController::removeMessage'
+  requirements:
+    _permission: 'privatemsg delete own messages'
+
+privatemsg.block_user:
+  path: '/messages/block/{user}'
+  defaults:
+    _title: 'Block user'
+    _controller: '\Drupal\privatemsg\Controller\PrivatemsgController::blockUser'
+  requirements:
+    _permission: 'privatemsg block users'
+
+privatemsg.block_user_form:
+  path: '/messages/blocked'
+  defaults:
+    _title: 'Blocked users'
+    _form: 'Drupal\privatemsg\Form\PrivatemsgBlockUserForm'
+  requirements:
+    _permission: 'privatemsg block users'

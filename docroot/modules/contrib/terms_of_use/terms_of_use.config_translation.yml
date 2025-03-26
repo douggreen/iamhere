@@ -1,0 +1,5 @@
+terms_of_use.config:
+  title: 'Terms of Use'
+  base_route_name: terms_of_use.settings_form
+  names:
+    - terms_of_use.settings

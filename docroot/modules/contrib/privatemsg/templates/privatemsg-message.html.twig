@@ -1,0 +1,63 @@
+{#
+ *
+ * Default theme implementation to present privatemsg message data.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *          content.field_name to access public fields
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_privatemsg_message()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('privatemsg/privatemsg') }}
+
+{% if marked_as_deleted %}
+  <div{{ attributes.addClass('privatemsg-message', 'privatemsg-message-deleted') }}>
+    <div class='privatemsg-message-column'>
+      {% trans %}The message was deleted on {{ message_deleted_time}} by {{ message_owner }}{% endtrans %}
+      {% if can_view_deleted_messages %}
+        <div class='privatemsg-message-information'>
+        <span class='privatemsg-author-name'>
+          {{ content.owner.0 }}
+        </span>
+          <span class='privatemsg-message-date'>
+          {{ content.created.0 }}
+        </span>
+        </div>
+        <div class='privatemsg-message-body'>
+          {{ content|without('owner', 'created') }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% else %}
+  <div{{ attributes.addClass('privatemsg-message') }}>
+    <div class='privatemsg-message-column'>
+      <div class='privatemsg-message-information'>
+        <span class='privatemsg-author-name'>
+          {{ content.owner.0 }}
+        </span>
+        <span class='privatemsg-message-date'>
+          {{ content.created.0 }}
+        </span>
+        <span class='privatemsg-message-unread-marker'>new</span>
+        <span class='privatemsg-message-recipient-unread-marker'>unread</span>
+        {% if delete_message_link %}
+          <a class="privatemsg-message-delete use-ajax" href="{{ delete_message_link }}">delete</a>
+        {% endif %}
+        {% if block_user %}
+          <a id="privatemsg-block-user-{{ block_user_id }}" class="privatemsg-block-user use-ajax" href="{{ block_user }}">{{ block_user_text }}</a>
+        {% endif %}
+        {% if claim_link %}
+          <a class="privatemsg-claim-link use-ajax" data-dialog-type="modal" data-dialog-options='{"width":"50%"}' href="{{ claim_link }}">{% trans %}Complain to moderator{% endtrans %}</a>
+        {% endif %}
+      </div>
+      <div class='privatemsg-message-body'>
+        {{ content|without('owner', 'created') }}
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,26 @@
+{
+    "name": "drupal/terms_of_use",
+    "description": "Adds terms of Use to the registration page.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "keywords": ["Drupal"],
+    "homepage": "https://www.drupal.org/project/terms_of_use",
+    "authors": [
+      {
+        "name": "Chill35",
+        "homepage": "https://www.drupal.org/user/92035",
+        "role": "Maintainer"
+      },
+      {
+        "name": "Viktor Holovachek (AstonVictor)",
+        "homepage": "https://www.drupal.org/u/astonvictor",
+        "role": "Maintainer"
+      }
+    ],
+    "minimum-stability": "dev",
+    "support": {
+      "issues": "https://www.drupal.org/project/issues/terms_of_use",
+      "source": "https://git.drupalcode.org/project/terms_of_use"
+    },
+    "require": {  }
+}
