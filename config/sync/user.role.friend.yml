@@ -1,0 +1,9 @@
+uuid: 04c3865c-ec6d-47b9-ad18-d75684846038
+langcode: en
+status: true
+dependencies: {  }
+id: friend
+label: Friend
+weight: 4
+is_admin: false
+permissions: {  }

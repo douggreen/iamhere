@@ -1,0 +1,14 @@
+uuid: aef35fff-132e-4c7e-947d-8395a54c4ccd
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.community_organizer
+  module:
+    - user
+id: user_remove_role_action.community_organizer
+label: 'Remove the Community Organizer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: community_organizer

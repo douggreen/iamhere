@@ -1,0 +1,9 @@
+uuid: ad054158-db80-438d-91c8-7a5ac9d73ae2
+langcode: en
+status: true
+dependencies: {  }
+id: organization_ambassador
+label: 'Organization Ambassador'
+weight: 6
+is_admin: false
+permissions: {  }
