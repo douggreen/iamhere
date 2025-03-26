@@ -4,15 +4,18 @@ status: true
 dependencies:
   config:
     - dashboard.dashboard.welcome
+    - filter.format.webform_default
   module:
     - captcha
     - coffee
     - dashboard
     - file
+    - filter
     - honeypot
     - klaro
     - media
     - node
+    - privatemsg
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
@@ -25,8 +28,14 @@ permissions:
   - 'access content'
   - 'bypass honeypot protection'
   - 'delete own files'
+  - 'privatemsg block users'
+  - 'privatemsg delete own messages'
+  - 'privatemsg send to role'
+  - 'privatemsg use messages actions'
+  - 'privatemsg write messages'
   - 'skip CAPTCHA'
   - 'use klaro'
+  - 'use text format webform_default'
   - 'view media'
   - 'view own unpublished content'
   - 'view welcome dashboard'

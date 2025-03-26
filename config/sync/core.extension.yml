@@ -39,6 +39,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  flag: 0
   focal_point: 0
   friendlycaptcha: 0
   gin_toolbar: 0
@@ -67,6 +68,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  privatemsg: 0
   project_browser: 0
   redirect: 0
   redirect_404: 0
@@ -74,19 +76,24 @@ module:
   sam: 0
   scheduler: 0
   scheduler_content_moderation_integration: 0
+  select_or_other: 0
+  smtp: 0
   svg_image: 0
   symfony_mailer_lite: 0
   system: 0
   tagify: 0
   tagify_user_list: 0
   taxonomy: 0
+  terms_of_use: 0
   text: 0
   token: 0
   toolbar: 0
   trash: 0
   update: 0
   user: 0
+  views_bulk_operations: 0
   views_ui: 0
+  webform: 0
   workflows: 0
   eca_form: 1
   pathauto: 1
