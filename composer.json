@@ -36,7 +36,7 @@
         "drupal/project_browser": "@beta",
         "drupal/recipe_installer_kit": "^1-alpha3@alpha",
         "drupal/webform": "@beta",
-        "drush/drush": "^13"
+        "drush/drush": "^13.4"
     },
     "conflict": {
         "drupal/drupal": "*"
