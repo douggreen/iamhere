@@ -1,5 +1,7 @@
 # “I am Here” Communities
 
+Also see the [design document](docs/design-document.md).
+
 ## Overview
 
 **Mission:**  
