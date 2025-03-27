@@ -75,18 +75,19 @@ Each user can only be a Community Organizer for **one** Community.
 - Date/Time
 - Host (User reference)
 - Number of seats available
-- Location Type (Home or Restaurant)
+- Invitation Type (Diverse [default], Cohort, Organization)
+- Location Type (Home [default] or Restaurant)
 - If Restaurant:
   - Linked Restaurant (entity reference)
 - If Home:
-  - Meal Type: Hosted / Potluck
+  - Meal Type: Hosted [default] / Potluck
   - Bring: Appetizer / Main / Dessert (checkboxes)
   - Dietary Notes (text)
 - Discussion Framework (entity reference to Framework)
 - Additional Notes
 - Status: Draft / Published
 
-### Framework
+### Discussion Framework
 - Title
 - Summary
 - Full Description
