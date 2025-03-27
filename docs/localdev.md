@@ -11,7 +11,7 @@ Before getting started, make sure you have the following installed:
 - DDEV: https://ddev.readthedocs.io/en/stable/#installation
 
 On macOS, you can install both with Homebrew:
-```
+```shell
 brew install ddev
 ```
 
@@ -19,17 +19,30 @@ brew install ddev
 ---------------------
 
 1. Clone the repository:
-```
+```shell
 git clone <your-repo-url> iamhere
 cd iamhere
 ```
 2. Start the DDEV environment, this will build the containers and configure the local project:
-```
+```shell
 ddev start
 ```
-3. Add instructions to setup a local. This will likely be a site-install and a recipe, but still @todo.
+3. Create your local installation as follows:
+```shell
+drush site:install drupal_cms_installer -y
+drush config:import -y
+drush recipe ../recipes/custom/iamhere
+```
 
-we will need to create a process for this, it's not created yet.
+Note that we only use recipes to create default content.
+
+## Export new config
+
+If you change configuration locally, you should export it using
+```shell
+ddev drush config:export -y
+```
+We'll use this export on the production site.
 
 ## Local Hostname Setup
 --------------------
@@ -60,7 +73,7 @@ ddev ssh
 
 ## Useful DDEV Commands
 --------------------
-```
+```shell
 ddev start # Start DDEV environment
 ddev stop # Stop the project
 ddev restart # Restart containers
@@ -72,7 +85,7 @@ ddev drush # Run Drush commands inside the container
 ## Cleanup
 -------
 To remove the local project and its database:
-```
+```shell
 ddev stop --remove-data
 ```
 

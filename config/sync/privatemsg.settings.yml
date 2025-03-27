@@ -4,8 +4,5 @@ remove_after: '30'
 allowed_roles:
   - content_editor
   - administrator
-  - friend
-  - community_organizer
-  - organization_ambassador
 moderator_role: ''
 unblockable_roles: {  }
