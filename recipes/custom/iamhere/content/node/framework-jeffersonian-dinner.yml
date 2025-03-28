@@ -1,0 +1,74 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 61f5a178-f161-4787-b5d9-37b9ba196d14
+  bundle: framework
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Jeffersonian Dinners'
+  created:
+    -
+      value: 1743196728
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /jeffersonian-dinners
+      langcode: en
+      pathauto: 1
+  field_framework_benefits:
+    -
+      value: '<p>Encourages depth and reflection, allowing each participant to share a personal story or opinion on the selected topic. Best suited for thoughtful dialogue, though it may require some preparation by the host and guests.</p>'
+      format: content_format
+  field_framework_details:
+    -
+      value: '<p>Silence is acceptable between speakers—this format encourages listening as much as talking.</p>'
+      format: content_format
+  field_framework_how_to:
+    -
+      value: 'Select a meaningful, open-ended topic in advance.'
+    -
+      value: 'Share the topic with guests before the dinner so they have time to reflect.'
+    -
+      value: 'Arrange seating in a single table format to encourage inclusivity.'
+    -
+      value: 'Begin the dinner by introducing the topic and any ground rules.'
+    -
+      value: 'Go around the table, allowing each person to speak without interruption.'
+    -
+      value: 'After everyone shares, open the floor for natural conversation.'
+    -
+      value: 'End with a reflection or takeaway from each guest.'
+  field_framework_resources:
+    -
+      uri: 'http://jeffersondinner.org/'
+      title: 'The Jefferson Dinner'
+      options: {  }
+  field_framework_size:
+    -
+      value: '5 to 10 participants. Works best with no more than 8 to maintain intimacy.'
+  field_framework_summary:
+    -
+      value: "<p>Inspired by Thomas Jefferson's tradition, this structured dinner brings together diverse thinkers for intimate, topic-driven conversations.</p>"
+      format: content_format
+  field_framework_time:
+    -
+      value: '90 minutes recommended. Minimum of 60 minutes.'

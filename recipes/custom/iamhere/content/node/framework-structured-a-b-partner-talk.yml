@@ -1,0 +1,72 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d87a0508-8165-489c-988a-23fd13a01f56
+  bundle: framework
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Structured A/B Partner Talk'
+  created:
+    -
+      value: 1743197951
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /structured-ab-partner-talk
+      langcode: en
+      pathauto: 1
+  field_framework_benefits:
+    -
+      value: '<p>Promotes empathy, active listening, and personal connection. Requires willingness to be vulnerable and good partner matching.</p>'
+      format: content_format
+  field_framework_details:
+    -
+      value: '<p>Useful as a warm-up or when deepening empathy is the goal.</p>'
+      format: content_format
+  field_framework_how_to:
+    -
+      value: 'Pair up participants and explain the structure.'
+    -
+      value: 'Person A shares for 2 minutes while B listens without interrupting.'
+    -
+      value: 'Person B paraphrases what they heard.'
+    -
+      value: 'Switch roles and repeat.'
+    -
+      value: 'Optionally, provide guiding questions for each round.'
+    -
+      value: 'Debrief in the larger group if desired.'
+  field_framework_resources:
+    -
+      uri: 'https://ambitiousscienceteaching.org/ab-partner-talk-protocol/'
+      title: ''
+      options: {  }
+  field_framework_size:
+    -
+      value: '4 to 20 participants (in pairs). Best with 6–12 for manageability.'
+  field_framework_summary:
+    -
+      value: '<p>A back-and-forth partner dialogue where each person takes turns sharing and paraphrasing the other’s viewpoint.</p>'
+      format: content_format
+  field_framework_time:
+    -
+      value: '30–60 minutes recommended. Minimum of 20 minutes.'

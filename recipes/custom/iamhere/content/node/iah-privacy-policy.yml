@@ -1,0 +1,46 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 36bb6b39-429a-411a-84fd-462f352ec80f
+  bundle: page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Privacy Policy'
+  created:
+    -
+      value: 1743184999
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /privacy-policy
+      langcode: en
+      pathauto: 1
+  field_content:
+    -
+      value: "<p><em>Effective Date: March 28, 2025</em></p><h2>TL;DR – What You Need to Know</h2><ul><li>To register as a <strong>Friend</strong>, we ask for your <strong>real name, physical address, email, phone number, and a photo</strong>. None of this is ever visible to other users, but it's used internally to verify identity and assign you to appropriate hosts or guests.</li><li>We may also request <strong>demographic information</strong> (e.g., age, gender, race/ethnicity, faith background). This is <strong>never shown publicly</strong> and is only used to help create <strong>diverse, inclusive small groups</strong>.</li><li>All <strong>personally identifiable information (PII)</strong> — including registration and demographic data — is stored <strong>securely and encrypted</strong>.</li><li>You can <strong>delete your demographic data</strong> or <strong>your entire profile</strong> at any time by visiting your account settings.</li></ul><h2>1. Introduction</h2><p>Welcome to <em>I am Here Communities</em>. We are committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and how we protect it. Our goal is to foster meaningful in-person connections while keeping your personal information safe.</p><h2>2. What Information We Collect</h2><h3>a. Registration Information (PII)</h3><p>When you register as a <strong>Friend</strong>, we collect:</p><ul><li>Your <strong>real name</strong></li><li><strong>Physical address</strong></li><li><strong>Email address</strong></li><li><strong>Phone number</strong></li><li><strong>Photo</strong></li></ul><p>This personally identifiable information (PII) is required to help build <strong>trust between members</strong>, ensure real-world accountability, and facilitate matching with appropriate community events and Hosts. This information:</p><ul><li>Is <strong>never shown to other users</strong></li><li>Is visible only to <strong>approved community organizers</strong> when needed to coordinate or verify member participation</li><li>Is treated with the highest level of confidentiality</li></ul><h3>b. Demographic Information (PII)</h3><p>We may also collect optional demographic data to help ensure our shared meal groups are inclusive and diverse. This may include:</p><ul><li>Age group</li><li>Gender identity</li><li>Race/ethnicity</li><li>Religious/spiritual affiliation</li><li>Language(s) spoken</li></ul><p>This data is:</p><ul><li><strong>Optional</strong></li><li><strong>Encrypted</strong></li><li>Used only internally by the automated system that <strong>helps group people thoughtfully</strong></li><li><strong>Never shown to Hosts, Guests, or other users</strong></li></ul><h3>c. Usage Data</h3><p>We also collect anonymous usage data, such as:</p><ul><li>IP address</li><li>Browser type</li><li>Pages visited</li><li>Time spent on pages</li></ul><p>This helps us improve the site experience and troubleshoot any issues.</p><h2>3. How We Use Your Information</h2><p>We use the information collected for the following purposes:</p><ul><li><strong>To verify your identity</strong> and support safe and trusted interactions</li><li><strong>To match members</strong> with compatible dining groups</li><li><strong>To communicate</strong> about events and updates</li><li><strong>To support internal research</strong> on community inclusion and impact (only in aggregate, anonymized form)</li><li><strong>To improve the platform</strong> and ensure it functions smoothly</li></ul><h2>4. Data Sharing and Disclosure</h2><p>We <strong>do not sell or rent</strong> your personal information to anyone.</p><p>Your PII may only be accessed:</p><ul><li>By <strong>internal staff</strong> or organizers authorized to coordinate and support member interactions</li><li>As <strong>required by law</strong> or to comply with legal obligations</li></ul><p>No demographic or registration data is shared with Hosts, Guests, or other members.</p><h2>5. Data Security</h2><p>We take data protection seriously.</p><ul><li>All PII is <strong>encrypted at rest and in transit</strong> using industry-standard protocols.</li><li>Access to sensitive data is <strong>restricted</strong> and monitored.</li><li>We review our security practices regularly to ensure compliance and safety.</li></ul><h2>6. Your Rights and Choices</h2><p>You control your data. At any time, you can:</p><ul><li><strong>Edit or delete your demographic information</strong></li><li><strong>Delete your entire account and profile</strong></li><li><strong>Request access</strong> to the personal data we hold about you</li><li><strong>Request corrections or deletion</strong> of any personal data</li></ul><p>To do any of these, visit your account settings or contact us at [contact email].</p><h2>7. Cookies and Tracking Technologies</h2><p>We use cookies for:</p><ul><li>Session management</li><li>Improving user experience</li><li>Analyzing anonymous traffic patterns</li></ul><p>You can disable cookies in your browser, but some features of the site may not work properly.</p><h2>8. Third-Party Services</h2><p>We may use third-party services (like analytics tools or mailing systems), but only those that comply with strong privacy standards. These services <strong>do not receive your PII</strong> unless required for critical operations, and only under strict agreements.</p><h2>9. Children's Privacy</h2><p>This platform is not intended for use by individuals under 18 years of age. We do not knowingly collect PII from children.</p><h2>10. Updates to This Policy</h2><p>We may occasionally update this policy. When we do, we'll:</p><ul><li>Update the effective date at the top</li><li>Post a notice on the website if changes are significant</li></ul><h2>11. Contact Us</h2><p>Questions or concerns?<br>Reach us at: [contact email]</p>"
+      format: content_format
+  field_description:
+    -
+      value: "To register as a Friend, we ask for your real name, physical address, email, phone number, and a photo. None of this is ever visible to other users, but it's used internally to verify identity and assign you to appropriate hosts or guests.\r\n\r\nWe may also request demographic information (e.g., age, gender, race/ethnicity, faith background). This is never shown publicly and is only used to help create diverse, inclusive small groups.\r\n\r\nAll personally identifiable information (PII) — including registration and demographic data — is stored securely and encrypted.\r\n\r\nYou can delete your demographic data or your entire profile at any time by visiting your account settings."

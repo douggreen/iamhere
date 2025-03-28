@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.framework.field_framework_benefits
+    - field.field.node.framework.field_framework_details
+    - field.field.node.framework.field_framework_how_to
+    - field.field.node.framework.field_framework_resources
+    - field.field.node.framework.field_framework_size
+    - field.field.node.framework.field_framework_summary
+    - field.field.node.framework.field_framework_time
+    - node.type.framework
+  module:
+    - link
+    - user
+id: node.framework.default
+targetEntityType: node
+bundle: framework
+mode: default
+content:
+  field_framework_resources:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_framework_benefits: true
+  field_framework_details: true
+  field_framework_how_to: true
+  field_framework_size: true
+  field_framework_summary: true
+  field_framework_time: true

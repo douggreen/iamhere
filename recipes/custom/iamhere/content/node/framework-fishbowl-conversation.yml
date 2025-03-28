@@ -1,0 +1,74 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: bfafe4e6-b300-4a3b-8b5e-440ebe2564f0
+  bundle: framework
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Fishbowl Conversation'
+  created:
+    -
+      value: 1743197690
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /fishbowl-conversation
+      langcode: en
+      pathauto: 1
+  field_framework_benefits:
+    -
+      value: '<p>Allows deep focus on an issue while others listen and reflect. Ideal for modeling civil discourse, but requires clear rules and structure.</p>'
+      format: content_format
+  field_framework_details:
+    -
+      value: '<p>Great for modeling respectful disagreement or exploring complex topics.</p>'
+      format: content_format
+  field_framework_how_to:
+    -
+      value: 'Set up two circles: an inner circle (fishbowl) and an outer circle (audience).'
+    -
+      value: 'Select a few participants to start in the fishbowl.'
+    -
+      value: 'Introduce the topic and rules (e.g., one empty chair policy).'
+    -
+      value: 'Inner circle discusses the topic while others observe silently.'
+    -
+      value: 'Outer participants may enter the fishbowl if a chair is free (optional).'
+    -
+      value: 'Rotate speakers over time to ensure variety.'
+    -
+      value: 'Debrief with all participants at the end.'
+  field_framework_resources:
+    -
+      uri: 'https://en.wikipedia.org/wiki/Fishbowl_(conversation)'
+      title: ''
+      options: {  }
+  field_framework_size:
+    -
+      value: '6 to 20 participants. Works best with 4-6 in the fishbowl and 10-15 in the outer circle.'
+  field_framework_summary:
+    -
+      value: '<p>A dynamic format where a small group discusses a topic in an inner circle while others observe, with rotating participation.</p>'
+      format: content_format
+  field_framework_time:
+    -
+      value: '60 to 90 minutes recommended. Minimum of 45 minutes.'

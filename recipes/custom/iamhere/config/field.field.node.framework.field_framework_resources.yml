@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_framework_resources
+    - node.type.framework
+  module:
+    - link
+id: node.framework.field_framework_resources
+field_name: field_framework_resources
+entity_type: node
+bundle: framework
+label: 'Framework Resources'
+description: 'Link to additional resources, internal resources are preferred, but external resources may also be used here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

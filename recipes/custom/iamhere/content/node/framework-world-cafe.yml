@@ -1,0 +1,74 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 625a93b1-5b31-4911-b498-fc336af00b8d
+  bundle: framework
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'World Café'
+  created:
+    -
+      value: 1743197492
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /world-cafe
+      langcode: en
+      pathauto: 1
+  field_framework_benefits:
+    -
+      value: '<p>Promotes cross-pollination of ideas and collaborative learning. Works especially well in larger groups but requires table setup and facilitation.</p>'
+      format: content_format
+  field_framework_details:
+    -
+      value: '<p>Encourages creativity and idea-building over argument or debate.</p>'
+      format: content_format
+  field_framework_how_to:
+    -
+      value: 'Choose 1-3 core questions relevant to your theme.'
+    -
+      value: 'Set up small tables (3–6 people per table) with paper and markers.'
+    -
+      value: 'Assign a host to each table to stay while others rotate.'
+    -
+      value: 'Round 1: Each table discusses the question and records key points.'
+    -
+      value: 'After 20 minutes, rotate all participants to new tables.'
+    -
+      value: 'Table hosts summarize past discussions to new guests.'
+    -
+      value: 'Repeat for 2–3 rounds, then reconvene for a whole-group harvest.'
+  field_framework_resources:
+    -
+      uri: 'https://theworldcafe.com/key-concepts-resources/world-cafe-method/'
+      title: ''
+      options: {  }
+  field_framework_size:
+    -
+      value: '90–120 minutes recommended. Minimum of 60 minutes.'
+  field_framework_summary:
+    -
+      value: '<p>A rotating conversation model where small groups explore a common question or theme across multiple tables.</p>'
+      format: content_format
+  field_framework_time:
+    -
+      value: '12 to 50+ participants. Optimal with at least 16 people and 3+ tables.'

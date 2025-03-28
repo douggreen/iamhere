@@ -4,6 +4,7 @@ description: Custom recipe for the I Am Here site.
 install:
 - address
 - ai
+- default_content
 - entity
 - flag
 - key
@@ -97,5 +98,3 @@ config:
         prompt_logging: false
         prompt_logging_tags: ''
         default_providers: {}
-    node.00d105b3-6f05-40c6-a289-3dd61c89480e:
-      entity_create:delete: ~
