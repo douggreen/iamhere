@@ -1,17 +1,52 @@
-name: custom/iamhere
-type: site
-description: Provides custom configuration and content types for the IAMHERE site.
-
+name: iamhere
+type: Site
+description: Custom recipe for the I Am Here site
 install:
+- enableModules:
+  - address
   - ai
-  - field
+  - entity
   - flag
+  - key
   - privatemsg
   - profile
   - select_or_other
   - smtp
-  - system
+  - telephone
   - terms_of_use
-  - user
   - views_bulk_operations
   - webform
+- defaultContent:
+  - entity_type: taxonomy_term
+    bundle: race
+    values:
+    - name: White
+    - name: Black or African American
+    - name: American Indian or Alaska Native
+    - name: Asian
+    - name: Native Hawaiian or Other Pacific Islander
+    - name: Other
+    - name: Prefer not to say
+  - entity_type: taxonomy_term
+    bundle: religion
+    values:
+    - name: Christian
+    - name: Jewish
+    - name: Muslim
+    - name: Buddhist
+    - name: Hindu
+    - name: Sikh
+    - name: Atheist
+    - name: Agnostic
+    - name: Other
+    - name: Prefer not to say
+  - entity_type: taxonomy_term
+    bundle: gender
+    values:
+    - name: Male
+    - name: Female
+    - name: Non-binary
+    - name: Transgender
+    - name: Intersex
+    - name: Other
+    - name: Prefer not to say
