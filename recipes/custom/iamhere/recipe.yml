@@ -16,20 +16,29 @@ install:
 - views_bulk_operations
 - webform
 config:
-  strict: false
+  strict:
+  - field.storage.node.field_contact_name
+  - field.storage.node.field_email
+  - field.storage.node.field_organization_address
+  - field.storage.node.field_phone
+  - field.storage.node.field_restaurant_address
+  - field.storage.node.field_restaurant_description
+  - field.storage.node.field_restaurant_name
+  - field.storage.node.field_restaurant_price
+  - field.storage.node.field_restaurant_space
+  - field.storage.profile.field_address
+  - field.storage.profile.field_dob
+  - field.storage.profile.field_first
+  - field.storage.profile.field_gender
+  - field.storage.profile.field_last
+  - field.storage.profile.field_photo
+  - field.storage.profile.field_politics
+  - field.storage.profile.field_race
+  - field.storage.profile.field_religion
   import:
-    config:
+    ai:
     - ai.settings
-    - core.entity_form_display.node.community.default
-    - core.entity_form_display.node.organization.default
-    - core.entity_form_display.node.restaurant.default
-    - core.entity_form_display.profile.demographics.default
-    - core.entity_form_display.profile.friend.default
-    - core.entity_form_display.user.user.register
-    - core.entity_view_display.node.organization.default
-    - core.entity_view_display.node.restaurant.default
-    - core.entity_view_display.profile.demographics.default
-    - core.entity_view_display.profile.friend.default
+    field:
     - field.field.node.organization.field_organization_address
     - field.field.node.restaurant.field_contact_name
     - field.field.node.restaurant.field_email
@@ -48,31 +57,25 @@ config:
     - field.field.profile.friend.field_first
     - field.field.profile.friend.field_last
     - field.field.profile.friend.field_photo
-    - field.storage.node.field_contact_name
-    - field.storage.node.field_email
-    - field.storage.node.field_organization_address
-    - field.storage.node.field_phone
-    - field.storage.node.field_restaurant_address
-    - field.storage.node.field_restaurant_description
-    - field.storage.node.field_restaurant_name
-    - field.storage.node.field_restaurant_price
-    - field.storage.node.field_restaurant_space
-    - field.storage.profile.field_address
-    - field.storage.profile.field_dob
-    - field.storage.profile.field_first
-    - field.storage.profile.field_gender
-    - field.storage.profile.field_last
-    - field.storage.profile.field_photo
-    - field.storage.profile.field_politics
-    - field.storage.profile.field_race
-    - field.storage.profile.field_religion
+    node:
     - node.type.community
     - node.type.organization
     - node.type.restaurant
+    - core.entity_form_display.node.community.default
+    - core.entity_form_display.node.organization.default
+    - core.entity_form_display.node.restaurant.default
+    - core.entity_view_display.node.organization.default
+    - core.entity_view_display.node.restaurant.default
+    profile:
     - profile.type.ambassador
     - profile.type.demographics
     - profile.type.friend
     - profile.type.organizer
+    - core.entity_form_display.profile.demographics.default
+    - core.entity_form_display.profile.friend.default
+    - core.entity_view_display.profile.demographics.default
+    - core.entity_view_display.profile.friend.default
+    system:
     - system.action.flag_delete_flagging
     - system.action.profile_delete_action
     - system.action.profile_publish_action
@@ -83,9 +86,11 @@ config:
     - system.action.user_remove_role_action.ambassador
     - system.action.user_remove_role_action.friend
     - system.action.user_remove_role_action.organizer
+    user:
     - user.role.ambassador
     - user.role.friend
     - user.role.organizer
+    - core.entity_form_display.user.user.register
   actions:
     ai.settings:
       simpleConfigUpdate:
