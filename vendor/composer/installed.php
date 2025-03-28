@@ -577,6 +577,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/default_content' => array(
+            'pretty_version' => '2.0.0-alpha3',
+            'version' => '2.0.0.0-alpha3',
+            'reference' => '2.0.0-alpha3',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../docroot/modules/contrib/default_content',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/drupal_cms_accessibility_tools' => array(
             'pretty_version' => '1.1.0',
             'version' => '1.1.0.0',

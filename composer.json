@@ -20,6 +20,7 @@
         "drupal/core-composer-scaffold": "^11.1.4",
         "drupal/core-project-message": "^11.1.4",
         "drupal/core-recommended": "^11.1.4",
+        "drupal/default_content": "^2.0@alpha",
         "drupal/drupal_cms_accessibility_tools": "~1.1.0",
         "drupal/drupal_cms_ai": "~1.1.0",
         "drupal/drupal_cms_analytics": "~1.1.0",
@@ -48,7 +49,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "alpha",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
