@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_gender
+    - profile.type.demographics
+    - taxonomy.vocabulary.gender
+  module:
+    - profile
+third_party_settings:
+  profile:
+    profile_private: true
+id: profile.demographics.field_gender
+field_name: field_gender
+entity_type: profile
+bundle: demographics
+label: Gender
+description: 'Your gender is only used by the internal matching of Friends when attempting to create diverse groups of people. When creating meal invites, we also try to ensure a gender balance, and ensure that there are enough women in any group, that no woman is alone (our policy is three or more women in any group of eight).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gender: gender
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

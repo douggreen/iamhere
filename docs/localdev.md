@@ -3,6 +3,8 @@
 This guide explains how to set up the Drupal CMS project locally using DDEV for containerized
 development.
 
+The local site will be https://iamhere.local. The production site is https://iamhere.social.
+
 ## Prerequisites
 -------------
 
@@ -30,11 +32,8 @@ ddev start
 3. Create your local installation as follows:
 ```shell
 drush site:install drupal_cms_installer -y
-drush config:import -y
 drush recipe ../recipes/custom/iamhere
 ```
-
-Note that we only use recipes to create default content.
 
 ## Export new config
 
@@ -43,6 +42,11 @@ If you change configuration locally, you should export it using
 ddev drush config:export -y
 ```
 We'll use this export on the production site.
+
+If you add new modules or config, these should also be added to the recipe.
+If you're just modifying some value use the "simpleConfigUpdate" action in the recipe.yml.
+If you're creating entirely new config that a contrib module does not provide by
+default, copy the config export to the recipe, and then remove the UUID's and core hashes. 
 
 ## Local Hostname Setup
 --------------------

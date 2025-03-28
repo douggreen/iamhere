@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ambassador
+label: Ambassador
+display_label: 'Organization Ambassador'
+multiple: false
+registration: false
+roles:
+  ambassador: ambassador
+allow_revisions: false
+new_revision: false

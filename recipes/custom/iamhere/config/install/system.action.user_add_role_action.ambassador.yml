@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.ambassador
+  module:
+    - user
+id: user_add_role_action.ambassador
+label: 'Add the Organization Ambassador role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: ambassador

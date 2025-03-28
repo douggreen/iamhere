@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: friend
+label: Friend
+display_label: Friend
+multiple: false
+registration: true
+roles:
+  friend: friend
+allow_revisions: false
+new_revision: false

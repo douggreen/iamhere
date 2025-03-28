@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_restaurant_address
+    - node.type.restaurant
+  module:
+    - address
+id: node.restaurant.field_restaurant_address
+field_name: field_restaurant_address
+entity_type: node
+bundle: restaurant
+label: 'Restaurant Address'
+description: "The restaurant's address. You can only enter one address. If there is multiple locations participating, please create a separate Restaurant record for each (each with their own address and contact details)."
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    US: US
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: hidden
+    addressLine3:
+      override: hidden
+    dependentLocality:
+      override: hidden
+  fields: {  }
+field_type: address

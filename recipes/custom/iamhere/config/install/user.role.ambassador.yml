@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ambassador
+label: 'Organization Ambassador'
+weight: 6
+is_admin: false
+permissions: {  }

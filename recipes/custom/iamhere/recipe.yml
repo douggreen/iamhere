@@ -3,6 +3,7 @@ type: site
 description: Provides custom configuration and content types for the IAMHERE site.
 
 install:
+  - ai
   - field
   - flag
   - privatemsg
