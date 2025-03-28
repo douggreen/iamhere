@@ -1,0 +1,33 @@
+uuid: 22cd8e64-48be-4949-8eb2-847d302c5133
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_restaurant_price
+field_name: field_restaurant_price
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 1
+      label: '$ Inexpensive (Under $15)'
+    -
+      value: 2
+      label: '$$ Moderate ($15 - $30)'
+    -
+      value: 3
+      label: '$$$ Pricey ($30 - $60)'
+    -
+      value: 4
+      label: '$$$$ Ultra High-End (over $60)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

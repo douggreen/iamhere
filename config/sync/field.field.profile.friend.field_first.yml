@@ -1,0 +1,19 @@
+uuid: c972edc3-fbda-4c0f-8177-6732a10bcfd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_first
+    - profile.type.friend
+id: profile.friend.field_first
+field_name: field_first
+entity_type: profile
+bundle: friend
+label: 'First name'
+description: 'Your first name. First and last real names are required.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

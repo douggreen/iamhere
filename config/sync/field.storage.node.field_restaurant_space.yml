@@ -1,0 +1,30 @@
+uuid: 195e3c8c-d099-438f-870b-d6600d8d5ab1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_restaurant_space
+field_name: field_restaurant_space
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: private_room
+      label: 'Private Room'
+    -
+      value: semi_private_room
+      label: 'Semi-Private Room'
+    -
+      value: quiet_area
+      label: 'Public Seating'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

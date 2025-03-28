@@ -1,0 +1,13 @@
+uuid: 6ecddbe5-be45-48de-b65e-1c6542d9338a
+langcode: en
+status: true
+dependencies: {  }
+id: friend
+label: Friend
+display_label: Friend
+multiple: false
+registration: true
+roles:
+  friend: friend
+allow_revisions: false
+new_revision: false

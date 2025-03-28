@@ -1,0 +1,88 @@
+uuid: 04a735a2-f555-46cd-a4aa-7337dc504254
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.demographics.field_address
+    - field.field.profile.demographics.field_dob
+    - field.field.profile.demographics.field_gender
+    - field.field.profile.demographics.field_politics
+    - field.field.profile.demographics.field_race
+    - field.field.profile.demographics.field_religion
+    - profile.type.demographics
+  module:
+    - address
+    - datetime
+    - tagify
+id: profile.demographics.default
+targetEntityType: profile
+bundle: demographics
+mode: default
+content:
+  field_address:
+    type: address_default
+    weight: 31
+    region: content
+    settings:
+      wrapper_type: fieldset
+    third_party_settings: {  }
+  field_dob:
+    type: datetime_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_gender:
+    type: tagify_entity_reference_autocomplete_widget
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
+    third_party_settings: {  }
+  field_politics:
+    type: tagify_entity_reference_autocomplete_widget
+    weight: 28
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
+    third_party_settings: {  }
+  field_race:
+    type: tagify_entity_reference_autocomplete_widget
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
+    third_party_settings: {  }
+  field_religion:
+    type: tagify_entity_reference_autocomplete_widget
+    weight: 29
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
+    third_party_settings: {  }
+hidden:
+  is_default: true

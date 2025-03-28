@@ -1,0 +1,22 @@
+uuid: ff228e00-21b8-4789-b30c-0b189d99a338
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_restaurant_description
+    - node.type.restaurant
+  module:
+    - text
+id: node.restaurant.field_restaurant_description
+field_name: field_restaurant_description
+entity_type: node
+bundle: restaurant
+label: 'Restaurant Description'
+description: "Any details you'd like to share with potential IAH Hosts. Please include details about the space available, any discounts being offered, days and hours that the offer is valid for, and type of food on the menu."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

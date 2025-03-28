@@ -1,6 +1,8 @@
 _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
+  address: 0
+  ai: 0
   announcements_feed: 0
   automated_cron: 0
   automatic_updates: 0
@@ -49,6 +51,7 @@ module:
   inline_form_errors: 0
   jquery_ui: 0
   jquery_ui_resizable: 0
+  key: 0
   klaro: 0
   layout_builder: 0
   layout_discovery: 0
@@ -86,6 +89,7 @@ module:
   tagify: 0
   tagify_user_list: 0
   taxonomy: 0
+  telephone: 0
   terms_of_use: 0
   text: 0
   token: 0

@@ -1,0 +1,19 @@
+uuid: 2a2691ef-010e-40ca-abfa-ca23142d8d34
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - node
+id: node.field_restaurant_address
+field_name: field_restaurant_address
+entity_type: node
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

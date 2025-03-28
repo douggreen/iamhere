@@ -1,0 +1,40 @@
+uuid: 71394c9c-a152-4164-ab6c-6377d5b0e9cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.friend.field_first
+    - field.field.profile.friend.field_last
+    - field.field.profile.friend.field_photo
+    - profile.type.friend
+id: profile.friend.default
+targetEntityType: profile
+bundle: friend
+mode: default
+content:
+  field_first:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_last:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

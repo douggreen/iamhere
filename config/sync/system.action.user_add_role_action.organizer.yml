@@ -1,0 +1,14 @@
+uuid: 5c4895e0-e215-4f5d-aa19-e79a1984c10a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.organizer
+  module:
+    - user
+id: user_add_role_action.organizer
+label: 'Add the Community Organizer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: organizer

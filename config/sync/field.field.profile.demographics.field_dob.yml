@@ -1,0 +1,25 @@
+uuid: 709e2834-0a4d-4924-9ea6-0c59800072f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_dob
+    - profile.type.demographics
+  module:
+    - datetime
+    - profile
+third_party_settings:
+  profile:
+    profile_private: true
+id: profile.demographics.field_dob
+field_name: field_dob
+entity_type: profile
+bundle: demographics
+label: 'Date of Birth'
+description: 'Your date of birth is only used by the internal matching of Friends when attempting to create diverse groups of people.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

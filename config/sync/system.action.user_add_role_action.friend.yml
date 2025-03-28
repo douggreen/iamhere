@@ -1,0 +1,14 @@
+uuid: 0e56f863-0eeb-4ebf-9a04-78d48ae6fbb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.friend
+  module:
+    - user
+id: user_add_role_action.friend
+label: 'Add the Friend role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: friend

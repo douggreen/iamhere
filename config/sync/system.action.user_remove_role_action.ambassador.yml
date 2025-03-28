@@ -1,0 +1,14 @@
+uuid: afcbfd29-d1da-4d5a-8b7d-2ec7013ed834
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.ambassador
+  module:
+    - user
+id: user_remove_role_action.ambassador
+label: 'Remove the Organization Ambassador role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: ambassador

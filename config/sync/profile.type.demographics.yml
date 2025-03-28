@@ -1,0 +1,13 @@
+uuid: 7fcc37d0-5d60-4013-ab66-2b1a0238f37c
+langcode: en
+status: true
+dependencies: {  }
+id: demographics
+label: Demographics
+display_label: 'Optional Demographics'
+multiple: false
+registration: false
+roles:
+  friend: friend
+allow_revisions: false
+new_revision: false

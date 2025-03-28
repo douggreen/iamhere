@@ -1,0 +1,16 @@
+name: custom/iamhere
+type: site
+description: Provides custom configuration and content types for the IAMHERE site.
+
+install:
+  - field
+  - flag
+  - privatemsg
+  - profile
+  - select_or_other
+  - smtp
+  - system
+  - terms_of_use
+  - user
+  - views_bulk_operations
+  - webform

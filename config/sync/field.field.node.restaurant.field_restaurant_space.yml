@@ -1,0 +1,21 @@
+uuid: 84f85bab-eb34-4682-9232-ebf77e23c4b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_restaurant_space
+    - node.type.restaurant
+  module:
+    - options
+id: node.restaurant.field_restaurant_space
+field_name: field_restaurant_space
+entity_type: node
+bundle: restaurant
+label: 'Restaurant Space'
+description: 'The type of space available for an IAH meal.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

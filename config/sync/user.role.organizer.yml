@@ -1,0 +1,9 @@
+uuid: 344e94c0-4a80-48d7-8b2f-2d4300888bc7
+langcode: en
+status: true
+dependencies: {  }
+id: organizer
+label: 'Community Organizer'
+weight: 5
+is_admin: false
+permissions: {  }

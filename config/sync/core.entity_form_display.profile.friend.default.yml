@@ -1,0 +1,41 @@
+uuid: 1a1c52a8-8653-4f5c-9ba9-f28c822de7c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.friend.field_first
+    - field.field.profile.friend.field_last
+    - field.field.profile.friend.field_photo
+    - profile.type.friend
+  module:
+    - media_library
+id: profile.friend.default
+targetEntityType: profile
+bundle: friend
+mode: default
+content:
+  field_first:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_last:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_photo:
+    type: media_library_widget
+    weight: 28
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  is_default: true
