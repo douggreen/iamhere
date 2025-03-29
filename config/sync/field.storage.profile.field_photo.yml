@@ -1,10 +1,12 @@
-uuid: 4700e49c-5a79-4c80-8f70-caa7acc119ac
+uuid: 91c631a0-171f-482b-8b7c-04f04075ba30
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - profile
+_core:
+  default_config_hash: pgMEvT5nxA_Ib20Ds1uLS2x5VjAEVm1Nu8OvEy3bqOI
 id: profile.field_photo
 field_name: field_photo
 entity_type: profile

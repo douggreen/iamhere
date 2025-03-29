@@ -1,10 +1,12 @@
-uuid: 761d7e3c-95aa-4528-9306-44ff1777fa51
+uuid: bae3572e-0da1-4113-85f4-98fc79bd9c9e
 langcode: en
 status: true
 dependencies:
   module:
     - profile
     - taxonomy
+_core:
+  default_config_hash: 6MtO4YsoYuOVxFviwpCqwKV4N5M7Ux1jWzqXXMtTQF4
 id: profile.field_gender
 field_name: field_gender
 entity_type: profile

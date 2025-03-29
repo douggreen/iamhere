@@ -1,16 +1,17 @@
-uuid: 5d96f587-e8c6-4cd7-bef3-3601cb83fa1f
+uuid: 84d31093-6767-4c6f-8a50-6e37de5b89a8
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_politics
     - profile.type.demographics
-    - taxonomy.vocabulary.politics
   module:
     - profile
 third_party_settings:
   profile:
     profile_private: true
+_core:
+  default_config_hash: FMr81sftJWczgIVwCgxwrBBB776JI8wJuxqYMkjK39o
 id: profile.demographics.field_politics
 field_name: field_politics
 entity_type: profile

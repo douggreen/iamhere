@@ -1,4 +1,4 @@
-uuid: d858717e-e465-40ca-86d7-58f73ddc1884
+uuid: 1d6b621e-b4a3-4d34-a808-ddb45be1f798
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - field.storage.profile.field_photo
     - media.type.image
     - profile.type.friend
+_core:
+  default_config_hash: oChy7bnQWCPdCmk-K4Lt2p2ZTxQKfxNKVDffMMvBupI
 id: profile.friend.field_photo
 field_name: field_photo
 entity_type: profile

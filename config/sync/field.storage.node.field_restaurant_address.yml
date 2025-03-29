@@ -1,10 +1,12 @@
-uuid: 2a2691ef-010e-40ca-abfa-ca23142d8d34
+uuid: b552ba13-6fe9-43e2-ad15-1bdb4e1a62ec
 langcode: en
 status: true
 dependencies:
   module:
     - address
     - node
+_core:
+  default_config_hash: ysQJnEbMXeb3U0VwHxB2DeIWGtPv5zmulyRgS1MZ0Uk
 id: node.field_restaurant_address
 field_name: field_restaurant_address
 entity_type: node

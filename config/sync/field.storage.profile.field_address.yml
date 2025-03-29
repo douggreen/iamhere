@@ -1,10 +1,12 @@
-uuid: 4855816e-5381-471e-95e4-7c50769b2c37
+uuid: 1c507976-16bf-4b76-a4bf-74d0155a69a2
 langcode: en
 status: true
 dependencies:
   module:
     - address
     - profile
+_core:
+  default_config_hash: YpGa_IdsXfAtqT6rY8cUv_dO2YhRb3BcKaShB7dTVJs
 id: profile.field_address
 field_name: field_address
 entity_type: profile

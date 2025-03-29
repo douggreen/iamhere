@@ -1,7 +1,9 @@
-uuid: 6ecddbe5-be45-48de-b65e-1c6542d9338a
+uuid: 9b8183f2-4fd1-4e64-94d1-d32f493685af
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: mqgidjcntkMl2XM-r1K_5ZfWK76noRISAPBiNmIUIHI
 id: friend
 label: Friend
 display_label: Friend

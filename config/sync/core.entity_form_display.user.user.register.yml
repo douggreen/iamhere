@@ -1,4 +1,4 @@
-uuid: 5ddb3701-1085-4c05-a959-1cd462424ba8
+uuid: f20c6d64-38a6-401d-ad82-5f5540429ca1
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - profile
     - user
 _core:
-  default_config_hash: pojsLtV41YIYgWaeuqfl6yG8fsVXhC1iVB7XwKG0nMc
+  default_config_hash: 3XJSYiBh2Dq8Y5qgkjNaqA8bgkdT3vk9m4BrXryv3U0
 id: user.user.register
 targetEntityType: user
 bundle: user
@@ -35,5 +35,6 @@ content:
     region: content
 hidden:
   ambassador_profiles: true
+  demographics_profiles: true
   organizer_profiles: true
   path: true

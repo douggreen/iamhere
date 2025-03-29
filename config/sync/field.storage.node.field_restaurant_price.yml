@@ -1,10 +1,12 @@
-uuid: 22cd8e64-48be-4949-8eb2-847d302c5133
+uuid: 2111c2b8-0449-4f00-802e-1446e7b536f5
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - options
+_core:
+  default_config_hash: dMeJVEKtVReqmVUr43TSLbeHMnhwYVupRN0f1_osx2o
 id: node.field_restaurant_price
 field_name: field_restaurant_price
 entity_type: node

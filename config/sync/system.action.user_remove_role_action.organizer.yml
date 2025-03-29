@@ -1,4 +1,4 @@
-uuid: e3fe413d-fc22-4532-93e1-9dcabb061bf2
+uuid: 4f6daa32-bd76-4033-aa0a-775f4a4356ce
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - user.role.organizer
   module:
     - user
+_core:
+  default_config_hash: H5qloDjDcleq0jbcQSwGIx8RKWT7FJS3130AqZn-pPg
 id: user_remove_role_action.organizer
 label: 'Remove the Community Organizer role from the selected user(s)'
 type: user

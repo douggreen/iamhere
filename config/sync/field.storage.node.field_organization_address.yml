@@ -1,10 +1,12 @@
-uuid: e87e94e4-b8fb-4ab0-b11d-846cf4c79e73
+uuid: 0241dcbc-ae6c-471e-90f4-84a232219ddd
 langcode: en
 status: true
 dependencies:
   module:
     - address
     - node
+_core:
+  default_config_hash: 58QFzMQtAq-EOrG0oDu1SpOWNLfrbkt5q-KOrCeL6VA
 id: node.field_organization_address
 field_name: field_organization_address
 entity_type: node

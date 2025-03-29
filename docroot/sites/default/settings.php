@@ -288,7 +288,7 @@ $settings['config_sync_directory'] = '../config/sync';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'azxcDMBqEp1BQnMOH8RPcu-kUE6-wCwcialHp5a3B8xgCcxgtrCSeAOfTGONuce4KW_qezkAyQ';
+$settings['hash_salt'] = '4BXyP8UTcQpKUVmxzf9l-j6jxGXKdImgSu8cTe-ofyrAsjZy9UI4VcmfSWaN20ZYdy6BwCKttA';
 
 /**
  * Deployment identifier.
@@ -878,6 +878,18 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+$databases['default']['default'] = array (
+  'database' => 'db',
+  'username' => 'db',
+  'password' => 'db',
+  'prefix' => '',
+  'host' => 'db',
+  'port' => 3306,
+  'isolation_level' => 'READ COMMITTED',
+  'driver' => 'mysql',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+);
 $databases['default']['default'] = array (
   'database' => 'db',
   'username' => 'db',

@@ -1,4 +1,4 @@
-uuid: 0e56f863-0eeb-4ebf-9a04-78d48ae6fbb4
+uuid: 60a8a4ad-bbdf-42e7-89d4-41f5870e8309
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - user.role.friend
   module:
     - user
+_core:
+  default_config_hash: ezk-TOx3xiRufmJGzsdbINNNx_G1f22cyJL3UXMskmc
 id: user_add_role_action.friend
 label: 'Add the Friend role to the selected user(s)'
 type: user

@@ -1,10 +1,12 @@
-uuid: 1b454e97-bb0c-4533-bf6b-d7a9d3f26935
+uuid: 3f2e838e-5a7c-42d9-9375-a7a33d43e60d
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: togu7VRN-1OfOiVuKdqTzDTPigUxaySF8rrCfF5Md9U
 id: node.field_restaurant_description
 field_name: field_restaurant_description
 entity_type: node

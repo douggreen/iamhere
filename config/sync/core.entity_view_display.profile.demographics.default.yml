@@ -1,4 +1,4 @@
-uuid: 45242421-47b6-4cc8-bbc8-679b8f28e9c8
+uuid: 56cbd397-68fa-45c4-af69-0843ab6598de
 langcode: en
 status: true
 dependencies:
@@ -13,6 +13,8 @@ dependencies:
   module:
     - address
     - datetime
+_core:
+  default_config_hash: X1b91PMGcMExpVWWACaMA7mB5MOIzN1X5pR_6MB5c_o
 id: profile.demographics.default
 targetEntityType: profile
 bundle: demographics

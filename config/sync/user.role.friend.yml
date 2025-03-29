@@ -1,7 +1,9 @@
-uuid: 0238ffda-8e42-4e0d-8bb0-5c3e179cf2c2
+uuid: 59e1074d-eda5-4cae-b45f-6d4372f34a48
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: n1T-aRuABt8SqQ0KHQ0wbIjaXemNmdi38q9Vd9aBCa8
 id: friend
 label: Friend
 weight: 4

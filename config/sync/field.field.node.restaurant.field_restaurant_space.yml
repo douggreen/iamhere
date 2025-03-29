@@ -1,4 +1,4 @@
-uuid: 84f85bab-eb34-4682-9232-ebf77e23c4b6
+uuid: 8caa94af-c672-4a31-b6f5-20d06c662571
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - node.type.restaurant
   module:
     - options
+_core:
+  default_config_hash: ait7u2g9T8W8yOwglAKgC0r7aO5lBhiHa2tTpmUYblw
 id: node.restaurant.field_restaurant_space
 field_name: field_restaurant_space
 entity_type: node

@@ -1,4 +1,4 @@
-uuid: ea5988ed-40e4-497f-85af-d24a84a30b4c
+uuid: 46e4f71f-4835-4788-ac85-34472e199bfa
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - user.role.friend
   module:
     - user
+_core:
+  default_config_hash: pmaybJEHHCNP4kzk3WKl6tnQ5utIwlYU2inCo2l5uZo
 id: user_remove_role_action.friend
 label: 'Remove the Friend role from the selected user(s)'
 type: user

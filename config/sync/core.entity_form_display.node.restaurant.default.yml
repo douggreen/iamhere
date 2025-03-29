@@ -1,4 +1,4 @@
-uuid: 9d16a252-f119-47a1-b8a2-df2ef85506b8
+uuid: 2cdae0ba-c133-497f-ad47-c74086ef3eb0
 langcode: en
 status: true
 dependencies:
@@ -6,10 +6,10 @@ dependencies:
     - field.field.node.restaurant.field_contact_name
     - field.field.node.restaurant.field_email
     - field.field.node.restaurant.field_phone
-    - field.field.node.restaurant.field_restaurant_price
-    - field.field.node.restaurant.field_restaurant_name
     - field.field.node.restaurant.field_restaurant_address
     - field.field.node.restaurant.field_restaurant_description
+    - field.field.node.restaurant.field_restaurant_name
+    - field.field.node.restaurant.field_restaurant_price
     - field.field.node.restaurant.field_restaurant_space
     - node.type.restaurant
   module:
@@ -18,6 +18,8 @@ dependencies:
     - path
     - telephone
     - text
+_core:
+  default_config_hash: hePkslnKD09-oM3e80cESH69TAMbBY3DHFDhew5lXhU
 id: node.restaurant.default
 targetEntityType: node
 bundle: restaurant
@@ -52,20 +54,6 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_restaurant_price:
-    type: options_select
-    weight: 126
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_restaurant_name:
-    type: string_textfield
-    weight: 122
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_restaurant_address:
     type: address_default
     weight: 129
@@ -80,6 +68,20 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_restaurant_name:
+    type: string_textfield
+    weight: 122
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_restaurant_price:
+    type: options_select
+    weight: 126
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_restaurant_space:
     type: options_select

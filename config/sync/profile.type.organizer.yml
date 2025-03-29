@@ -1,7 +1,9 @@
-uuid: 2fee96c3-1829-4559-949b-465af39eb0ed
+uuid: 99df6837-9754-4412-95d6-77212dec0e4d
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: crmryfCjJ4mlFSbQAR0QFRp2_l7S5JgbLqBRNZemu9Y
 id: organizer
 label: Organizer
 display_label: 'Community Organizer'

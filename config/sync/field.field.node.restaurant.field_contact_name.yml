@@ -1,10 +1,12 @@
-uuid: ae0fbe28-baab-4aa4-b318-ff79af683ef0
+uuid: c0484d5b-c5d8-4bdd-aeb7-bbe5866afa1d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_contact_name
     - node.type.restaurant
+_core:
+  default_config_hash: CAtd6iZ9ZEXr8qw1GOdkAnU2HuGWrNbiDBB_7qhL6aY
 id: node.restaurant.field_contact_name
 field_name: field_contact_name
 entity_type: node

@@ -1,7 +1,9 @@
-uuid: 737b1d2b-b441-4b6c-8dc8-a6ec1721ffb8
+uuid: 58d91244-e90a-4b7a-9768-674a789d19fb
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: pbJtbj01FGBwD986hu3qAqkCtrfXSFo8WF6sdapj9zE
 id: ambassador
 label: 'Organization Ambassador'
 weight: 6

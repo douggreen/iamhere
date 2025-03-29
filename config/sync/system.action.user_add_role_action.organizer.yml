@@ -1,4 +1,4 @@
-uuid: 5c4895e0-e215-4f5d-aa19-e79a1984c10a
+uuid: 28024bd2-6cab-41c1-8531-0b433579d8e5
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - user.role.organizer
   module:
     - user
+_core:
+  default_config_hash: CTI9avuO02FjV53phE_K0bUQ33okcJjKPgyQWYVCUcM
 id: user_add_role_action.organizer
 label: 'Add the Community Organizer role to the selected user(s)'
 type: user

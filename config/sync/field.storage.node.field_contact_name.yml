@@ -1,9 +1,11 @@
-uuid: 72f73285-f29d-40b4-b28b-04aec295f550
+uuid: fd433ab6-389a-4d5a-8626-6a33b1f0dd7f
 langcode: en
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: PEvpdRwiNN-LTqME-4HCfj1W-byI8fSVCQH6GW7gLPY
 id: node.field_contact_name
 field_name: field_contact_name
 entity_type: node

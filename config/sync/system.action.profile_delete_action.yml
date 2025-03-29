@@ -1,4 +1,4 @@
-uuid: 22c2abbd-2ed6-4e85-8386-f79aaca4239e
+uuid: 8d190072-bd6e-48f2-a26d-9a1503685a29
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     module:
       - profile
 _core:
-  default_config_hash: eoobeznDDPWSXzEXh6a3AT21rMluXtseCPjsguEgHKs
+  default_config_hash: 4lyY7zZdwX4GSN95VTpkQ68U2LGKbVAgxAPYmTlNQEA
 id: profile_delete_action
 label: 'Delete selected profile'
 type: profile

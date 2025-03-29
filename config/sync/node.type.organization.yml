@@ -1,4 +1,4 @@
-uuid: b685e904-23d9-4654-8266-38b24ecf4b81
+uuid: 1934cb9f-5ae9-4b9c-8d8b-b4389773a669
 langcode: en
 status: true
 dependencies:
@@ -23,6 +23,8 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
+_core:
+  default_config_hash: mfML1-bWgi3pDXwYf5M7F4qJmHNtnkG3Gp0ab4ck6lk
 name: Organization
 type: organization
 description: 'Organizations are local organizations within a Community that, typically faith-based, civic, or educational institutions (e.g., churches, synagogues, mosques, Rotary clubs, schools).'

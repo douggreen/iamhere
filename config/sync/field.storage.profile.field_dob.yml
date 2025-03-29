@@ -1,10 +1,12 @@
-uuid: d223d772-6986-48f3-abbb-b36c6444331c
+uuid: 6899513c-ed74-4fd0-a328-230090c84644
 langcode: en
 status: true
 dependencies:
   module:
     - datetime
     - profile
+_core:
+  default_config_hash: 5LK6hvQrnBbxw02io3cpMYUcOWAn6O-AHGBOymRiTUY
 id: profile.field_dob
 field_name: field_dob
 entity_type: profile

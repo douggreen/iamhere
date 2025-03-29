@@ -1,10 +1,12 @@
-uuid: 1e0d27d1-23ac-4d2a-84e0-d0acada4c377
+uuid: 3abb5b27-4a55-46fd-b679-3087a2b31ee6
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_last
     - profile.type.friend
+_core:
+  default_config_hash: Gk1Jjuz8xvanC_K-2byLs5hJTsUab2QNfCcRgprnvhs
 id: profile.friend.field_last
 field_name: field_last
 entity_type: profile

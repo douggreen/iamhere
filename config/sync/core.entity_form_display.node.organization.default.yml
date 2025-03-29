@@ -1,4 +1,4 @@
-uuid: c19c5c98-7831-4cb9-a08d-a0a403d0fe38
+uuid: 57e4155a-ccd8-43bc-929c-5c2dfa4313fb
 langcode: en
 status: true
 dependencies:
@@ -9,6 +9,8 @@ dependencies:
     - address
     - content_moderation
     - path
+_core:
+  default_config_hash: MYuSL7Ydzmwq4yclW1qYcdYkBS8ptv1SFJNJoKRgXxk
 id: node.organization.default
 targetEntityType: node
 bundle: organization

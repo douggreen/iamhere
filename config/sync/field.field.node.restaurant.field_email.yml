@@ -1,10 +1,12 @@
-uuid: 53671ba6-9243-4c79-b7aa-653426161a64
+uuid: 3bed6f3f-9a51-40d0-98e7-4e56438980eb
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_email
     - node.type.restaurant
+_core:
+  default_config_hash: CaRGL8Nqcat916O64VcAlMsax-BLtlDv3dehWw-XrgE
 id: node.restaurant.field_email
 field_name: field_email
 entity_type: node

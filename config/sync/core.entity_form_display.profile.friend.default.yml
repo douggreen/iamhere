@@ -1,4 +1,4 @@
-uuid: 1a1c52a8-8653-4f5c-9ba9-f28c822de7c1
+uuid: 11113ac4-3ce5-4b80-a524-045803713a6e
 langcode: en
 status: true
 dependencies:
@@ -9,6 +9,8 @@ dependencies:
     - profile.type.friend
   module:
     - media_library
+_core:
+  default_config_hash: PaiK5tqhL-sJJlbdSwRBclKAY8zRxoDin2veM_U16EU
 id: profile.friend.default
 targetEntityType: profile
 bundle: friend

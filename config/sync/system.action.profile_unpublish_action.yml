@@ -1,4 +1,4 @@
-uuid: 944a39ee-52ed-4ef6-8d95-a14da726cc32
+uuid: f42afc1d-a291-40a2-867c-d3c1dca6d38c
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     module:
       - profile
 _core:
-  default_config_hash: i6SUyw-h9LthgtmTiKGbqFIh-JXnBtXLG2NCV7CkI3M
+  default_config_hash: nYm8SIRAy1GJJRQEJzyQ9MgnYY4EqPv2Dwax3laCGWU
 id: profile_unpublish_action
 label: 'Unpublish selected profile'
 type: profile

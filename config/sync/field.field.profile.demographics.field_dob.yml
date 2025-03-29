@@ -1,4 +1,4 @@
-uuid: 709e2834-0a4d-4924-9ea6-0c59800072f1
+uuid: de7cc434-f50e-4a59-9126-3bcd6d9822cc
 langcode: en
 status: true
 dependencies:
@@ -11,6 +11,8 @@ dependencies:
 third_party_settings:
   profile:
     profile_private: true
+_core:
+  default_config_hash: YIt2kTaICSvod9q7rwcex_z2PIImvVF172XyvHIQGKE
 id: profile.demographics.field_dob
 field_name: field_dob
 entity_type: profile

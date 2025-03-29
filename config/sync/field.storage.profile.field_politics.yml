@@ -1,10 +1,12 @@
-uuid: 949d0d31-a6e4-4994-b369-e3d014b73adc
+uuid: 8d4844b2-07e0-4655-bf1f-d278d7353182
 langcode: en
 status: true
 dependencies:
   module:
     - profile
     - taxonomy
+_core:
+  default_config_hash: iyC6TedcgLxci6gAkOTK-eXnYtuwe8ruubuXmHkh9Bk
 id: profile.field_politics
 field_name: field_politics
 entity_type: profile

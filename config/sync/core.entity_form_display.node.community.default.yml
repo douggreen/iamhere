@@ -1,4 +1,4 @@
-uuid: f2467292-76a0-41c8-bc01-bb92fd846cdf
+uuid: 1159d6fc-a30b-492d-b1a3-f124028fe301
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
   module:
     - content_moderation
     - path
+_core:
+  default_config_hash: E_CTFqsCN2sQryD2e48krp3pwvjRkCPemUoDnXClSXQ
 id: node.community.default
 targetEntityType: node
 bundle: community

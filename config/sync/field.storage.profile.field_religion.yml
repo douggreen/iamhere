@@ -1,10 +1,12 @@
-uuid: 37b7123f-b9c3-48e6-99d3-5c503b3dae1a
+uuid: 0a7445ef-1bd4-4dbb-9462-3328a739e99b
 langcode: en
 status: true
 dependencies:
   module:
     - profile
     - taxonomy
+_core:
+  default_config_hash: O3tiTV8yf0I2BFdaN-9Ab_h1xeeNokElDSzHqVptIRs
 id: profile.field_religion
 field_name: field_religion
 entity_type: profile

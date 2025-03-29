@@ -1,7 +1,9 @@
-uuid: 344e94c0-4a80-48d7-8b2f-2d4300888bc7
+uuid: 23d16ab5-00eb-466d-892b-dace4ad863c4
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: fC0Vj0lT5KaJXMEuuCEEqPwxOc8tDMZwztJynMfPRVc
 id: organizer
 label: 'Community Organizer'
 weight: 5

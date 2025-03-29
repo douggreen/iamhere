@@ -1,4 +1,4 @@
-uuid: 78e0450d-d633-4a5b-8354-26334a26b13c
+uuid: 2466c7b0-2274-4241-902d-ea8537d02f8e
 langcode: en
 status: true
 dependencies:
@@ -23,6 +23,8 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
+_core:
+  default_config_hash: z_TmIF9GbUExh9Pn1VFE_09j6o-bsunXMYtOwt2VvSQ
 name: Community
 type: community
 description: 'Communities are geographic areas (e.g., Winchester, Charlottesville) where an "I am Here" (IAH) program is active. Communities should be small enough that you can run into someone at the local grocery store. So a Community in a large metropolitan area, should be limited to something manageable (Downtown Cincinnati, Norther Cincinnati, etc). Anyone can start a local IAH Community and become its Community Organizer.'

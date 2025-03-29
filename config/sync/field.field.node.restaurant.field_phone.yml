@@ -1,4 +1,4 @@
-uuid: 69ee9f68-86f9-444b-951d-3ae029d8bc9f
+uuid: c64a1a74-b5cc-4dfb-a203-24ba5ed8ad1d
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - node.type.restaurant
   module:
     - telephone
+_core:
+  default_config_hash: fui1RiNqnxG9XAPxv54qzs7jgF1ZW4fqNUpSZKuuuQk
 id: node.restaurant.field_phone
 field_name: field_phone
 entity_type: node

@@ -1,9 +1,11 @@
-uuid: d21c60e2-c9a3-4770-8b0a-8d2dd447c55a
+uuid: 3acc783f-8711-470b-8b50-d8dfb43fe867
 langcode: en
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: ZYyXrqhTIOLXCbVi9J6ZSGcMGXbllGMg_vBS7bBGAgs
 id: node.field_email
 field_name: field_email
 entity_type: node

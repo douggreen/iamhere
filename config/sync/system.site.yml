@@ -1,10 +1,10 @@
 _core:
   default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
 langcode: en
-uuid: d484785c-d820-4a4e-81b9-4c3c79719164
-name: 'Drush Site-Install'
-mail: admin@example.com
-slogan: ''
+uuid: 0728a218-7da8-463e-9def-9b84f8379b0e
+name: 'I am Here Communities'
+mail: admin@iamhere.social
+slogan: 'Show Up. Share a Meal. See Each Other.'
 page:
   403: /user/login
   404: ''

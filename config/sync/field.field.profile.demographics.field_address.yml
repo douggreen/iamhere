@@ -1,4 +1,4 @@
-uuid: 6f20aa93-28f6-4699-91fe-937601771a15
+uuid: 710ffe96-3a5b-4c96-82c1-0b86b6407948
 langcode: en
 status: true
 dependencies:
@@ -11,6 +11,8 @@ dependencies:
 third_party_settings:
   profile:
     profile_private: true
+_core:
+  default_config_hash: 8PzCJfUQqp71Q8PX04TyOFBgPd-VnPV_soohCNj_OWw
 id: profile.demographics.field_address
 field_name: field_address
 entity_type: profile

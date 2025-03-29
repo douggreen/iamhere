@@ -1,10 +1,12 @@
-uuid: c972edc3-fbda-4c0f-8177-6732a10bcfd4
+uuid: 3b5ed65f-6b4f-4424-8823-4350e678fd70
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_first
     - profile.type.friend
+_core:
+  default_config_hash: HrLZequRHAo6UAZX4_jM9BeMI64FxnOevCpeK2WcFKg
 id: profile.friend.field_first
 field_name: field_first
 entity_type: profile

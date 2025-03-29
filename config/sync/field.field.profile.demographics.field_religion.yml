@@ -1,16 +1,17 @@
-uuid: 72cd4d4e-fcd4-4234-9c3c-48b36f06d52e
+uuid: 41871179-24c3-47aa-9cdf-6ff730fc9896
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_religion
     - profile.type.demographics
-    - taxonomy.vocabulary.religion
   module:
     - profile
 third_party_settings:
   profile:
     profile_private: true
+_core:
+  default_config_hash: aZHS-5hP_t7PPfzo6NbRZzRUrxIn_Hc1ei0cMH-6Z7A
 id: profile.demographics.field_religion
 field_name: field_religion
 entity_type: profile

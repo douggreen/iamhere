@@ -1,4 +1,4 @@
-uuid: b7ad79d3-7f55-484f-bca8-d212d7cfe0fc
+uuid: 9ea98345-4a9b-4df6-a3a4-a33a08c66fc9
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,8 @@ dependencies:
   module:
     - address
     - user
+_core:
+  default_config_hash: 21_QQwR7kc-BmU2ltVySAagIHK4krxLlPc0MSTC-g7M
 id: node.organization.default
 targetEntityType: node
 bundle: organization

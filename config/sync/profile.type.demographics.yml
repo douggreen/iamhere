@@ -1,7 +1,9 @@
-uuid: 7fcc37d0-5d60-4013-ab66-2b1a0238f37c
+uuid: a2d4cc0e-7362-4e03-8dfd-c786a6a81785
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: dG7Zs5aDJ9df_9KoLOnp5idVYfmQk1biyYMWVgdZy3M
 id: demographics
 label: Demographics
 display_label: 'Optional Demographics'

@@ -1,4 +1,4 @@
-uuid: 71394c9c-a152-4164-ab6c-6377d5b0e9cf
+uuid: e4b4e26a-1d5f-4f12-a75d-d9b2ad565189
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - field.field.profile.friend.field_last
     - field.field.profile.friend.field_photo
     - profile.type.friend
+_core:
+  default_config_hash: QoVW21zHrGCbWY4B8cui0Ud1FfnhY0ZF4sd6aBn8wLA
 id: profile.friend.default
 targetEntityType: profile
 bundle: friend

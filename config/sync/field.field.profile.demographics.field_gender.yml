@@ -1,16 +1,17 @@
-uuid: 097cbd4e-2780-4369-b6f4-04d7b14390b8
+uuid: 18db136e-fa2a-41b1-a683-24f17eda32c0
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_gender
     - profile.type.demographics
-    - taxonomy.vocabulary.gender
   module:
     - profile
 third_party_settings:
   profile:
     profile_private: true
+_core:
+  default_config_hash: o9Nd8B1_DaJUqnkOQWFc3TLo_dhkysRqdi3vOTjkkVc
 id: profile.demographics.field_gender
 field_name: field_gender
 entity_type: profile

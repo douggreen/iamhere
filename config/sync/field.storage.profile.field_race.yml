@@ -1,10 +1,12 @@
-uuid: 4657b8e2-f649-487d-bf63-f7d717fd22c7
+uuid: a6268f7f-5d35-48ce-b042-8065a35fcabd
 langcode: en
 status: true
 dependencies:
   module:
     - profile
     - taxonomy
+_core:
+  default_config_hash: B3wNek8ZKj8gD4F55f8agrvc-NwJlfeoggv8sMkIuVw
 id: profile.field_race
 field_name: field_race
 entity_type: profile

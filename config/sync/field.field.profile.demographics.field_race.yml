@@ -1,16 +1,17 @@
-uuid: c038293f-82aa-4687-b360-1b40430a973b
+uuid: fc7fd197-b59f-4362-8fa8-c1f817cce8f2
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.profile.field_race
     - profile.type.demographics
-    - taxonomy.vocabulary.race
   module:
     - profile
 third_party_settings:
   profile:
     profile_private: true
+_core:
+  default_config_hash: L8xVPyxbBq2TKmVqqL7cD8G5Xz6IQ7-5ekcdfVkEgwQ
 id: profile.demographics.field_race
 field_name: field_race
 entity_type: profile
