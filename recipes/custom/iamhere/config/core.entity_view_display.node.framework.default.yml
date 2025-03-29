@@ -12,12 +12,35 @@ dependencies:
     - node.type.framework
   module:
     - link
+    - text
     - user
 id: node.framework.default
 targetEntityType: node
 bundle: framework
 mode: default
 content:
+  field_framework_benefits:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_framework_details:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_framework_how_to:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_framework_resources:
     type: link
     label: above
@@ -28,17 +51,34 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 103
+    weight: 6
+    region: content
+  field_framework_size:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_framework_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_framework_time:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 7
     region: content
-hidden:
-  field_framework_benefits: true
-  field_framework_details: true
-  field_framework_how_to: true
-  field_framework_size: true
-  field_framework_summary: true
-  field_framework_time: true
+hidden: {  }

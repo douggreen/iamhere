@@ -37,11 +37,9 @@ default:
   field_framework_benefits:
     -
       value: '<p>Allows deep focus on an issue while others listen and reflect. Ideal for modeling civil discourse, but requires clear rules and structure.</p>'
-      format: content_format
   field_framework_details:
     -
       value: '<p>Great for modeling respectful disagreement or exploring complex topics.</p>'
-      format: content_format
   field_framework_how_to:
     -
       value: 'Set up two circles: an inner circle (fishbowl) and an outer circle (audience).'
@@ -68,7 +66,6 @@ default:
   field_framework_summary:
     -
       value: '<p>A dynamic format where a small group discusses a topic in an inner circle while others observe, with rotating participation.</p>'
-      format: content_format
   field_framework_time:
     -
       value: '60 to 90 minutes recommended. Minimum of 45 minutes.'

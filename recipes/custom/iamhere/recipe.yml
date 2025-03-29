@@ -93,8 +93,11 @@ config:
     - user.role.organizer
     - core.entity_form_display.user.user.register
   actions:
-    ai.settings:
+    system.site:
       simpleConfigUpdate:
-        prompt_logging: false
-        prompt_logging_tags: ''
-        default_providers: {}
+        name: 'I am Here Communities'
+        mail: 'admin@iamhere.social'
+        slogan: 'Show Up. Share a Meal. See Each Other.'
+    drupal_cms_olivero.settings:
+      simpleConfigUpdate:
+        base_primary_color: '#9ae41b'
