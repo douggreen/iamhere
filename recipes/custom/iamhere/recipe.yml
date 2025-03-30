@@ -6,10 +6,12 @@ install:
   - ai
   - default_content
   - entity
+  - field_encrypt
   - flag
   - key
   - privatemsg
   - profile
+  - real_aes
   - select_or_other
   - smtp
   - telephone

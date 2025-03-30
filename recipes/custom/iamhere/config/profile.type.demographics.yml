@@ -7,6 +7,6 @@ display_label: 'Optional Demographics'
 multiple: false
 registration: false
 roles:
-  friend: friend
+  authenticated: authenticated
 allow_revisions: false
 new_revision: false

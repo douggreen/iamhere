@@ -4,6 +4,9 @@ dependencies:
   module:
     - media
     - profile
+third_party_settings:
+  profile:
+    profile_private: true
 id: profile.field_photo
 field_name: field_photo
 entity_type: profile

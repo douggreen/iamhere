@@ -4,6 +4,9 @@ dependencies:
   module:
     - profile
     - taxonomy
+third_party_settings:
+  profile:
+    profile_private: true
 id: profile.field_race
 field_name: field_race
 entity_type: profile

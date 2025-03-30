@@ -1,0 +1,28 @@
+# Configuration file for PHPStan static code checking, see https://phpstan.org .
+includes:
+  - phar://phpstan.phar/conf/bleedingEdge.neon
+
+parameters:
+
+  level: 6
+
+  treatPhpDocTypesAsCertain: false
+
+  excludePaths:
+    # This script is for testing and is not code run by the module.
+    - tests/scripts/performance_test.php
+
+  ignoreErrors:
+    # new static() is a best practice in Drupal, so we cannot fix that.
+    - "#^Unsafe usage of new static#"
+    # Return types.
+    - "#has no value type specified in iterable type iterable#"
+    # We aren't handling array shape errors at this time.
+    - "#no value type specified in iterable type array#"
+    # Ignore FieldItemListInterface errors.
+    - '#with generic interface Drupal\\Core\\Field\\FieldItemListInterface does not specify its types#'
+    - '#with generic interface Drupal\\Core\\Field\\FieldItemListInterface but does not specify its types#'
+    - '#no value type specified in iterable type Drupal\\Core\\Field\\FieldItemListInterface#'
+    # Waiting on https://www.drupal.org/project/drupal/issues/2839195.
+    - '#Access to an undefined property Drupal\\field_encrypt\\Entity\\FieldEncryptEntityType::\$original#'
+

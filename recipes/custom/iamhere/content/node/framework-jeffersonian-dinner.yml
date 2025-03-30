@@ -37,9 +37,11 @@ default:
   field_framework_benefits:
     -
       value: '<p>Encourages depth and reflection, allowing each participant to share a personal story or opinion on the selected topic. Best suited for thoughtful dialogue, though it may require some preparation by the host and guests.</p>'
+      format: 'content_format'
   field_framework_details:
     -
       value: '<p>Silence is acceptable between speakers—this format encourages listening as much as talking.</p>'
+      format: 'content_format'
   field_framework_how_to:
     -
       value: 'Select a meaningful, open-ended topic in advance.'
@@ -58,7 +60,6 @@ default:
   field_framework_resources:
     -
       uri: 'http://jeffersondinner.org/'
-      title: 'The Jefferson Dinner'
       options: {  }
   field_framework_size:
     -
@@ -66,6 +67,7 @@ default:
   field_framework_summary:
     -
       value: "<p>Inspired by Thomas Jefferson's tradition, this structured dinner brings together diverse thinkers for intimate, topic-driven conversations.</p>"
+      format: 'content_format'
   field_framework_time:
     -
       value: '90 minutes recommended. Minimum of 60 minutes.'

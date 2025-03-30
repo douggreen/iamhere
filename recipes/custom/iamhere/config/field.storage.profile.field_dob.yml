@@ -4,6 +4,9 @@ dependencies:
   module:
     - datetime
     - profile
+third_party_settings:
+  profile:
+    profile_private: true
 id: profile.field_dob
 field_name: field_dob
 entity_type: profile

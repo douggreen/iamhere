@@ -3,6 +3,9 @@ status: true
 dependencies:
   module:
     - profile
+third_party_settings:
+  profile:
+    profile_private: true
 id: profile.field_first
 field_name: field_first
 entity_type: profile

@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  # Services.
+  field_encrypt.process_entities:
+    class: Drupal\field_encrypt\ProcessEntities
+  field_encrypt.state_manager:
+    class: Drupal\field_encrypt\StateManager
+
+  # Aliases for autowiring.
+  Drupal\field_encrypt\ProcessEntities: '@field_encrypt.process_entities'
+  Drupal\field_encrypt\StateManager: '@field_encrypt.state_manager'
+
+  # Events.
+  Drupal\field_encrypt\EventSubscriber\ConfigSubscriber: ~

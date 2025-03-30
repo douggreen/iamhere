@@ -37,9 +37,11 @@ default:
   field_framework_benefits:
     -
       value: '<p>Ensures equal participation and limits dominance by a few voices. Best for goal-setting or problem-solving, though more formal than other formats.</p>'
+      format: 'content_format'
   field_framework_details:
     -
       value: '<p>Helps groups reach decisions quickly and inclusively.</p>'
+      format: 'content_format'
   field_framework_how_to:
     -
       value: 'Present a clear question or challenge.'
@@ -58,7 +60,6 @@ default:
   field_framework_resources:
     -
       uri: 'https://en.wikipedia.org/wiki/Nominal_group_technique'
-      title: ''
       options: {  }
   field_framework_size:
     -
@@ -66,6 +67,7 @@ default:
   field_framework_summary:
     -
       value: '<p>A structured idea-generation process where participants brainstorm silently, then share and rank ideas as a group.</p>'
+      format: 'content_format'
   field_framework_time:
     -
       value: '60–90 minutes recommended. Minimum of 45 minutes.'

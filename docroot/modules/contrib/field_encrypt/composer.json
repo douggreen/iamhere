@@ -1,0 +1,12 @@
+{
+    "name": "drupal/field_encrypt",
+    "description": "Extends the Field API to allow encryption of fields.",
+    "type": "drupal-module",
+    "require": {
+        "drupal/core": "^11.1",
+        "drupal/encrypt": "^3.0@dev"
+    },
+    "require-dev": {
+        "drupal/commerce": "^3.0"
+    }
+}

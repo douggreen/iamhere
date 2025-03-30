@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains module hooks for field_encrypt.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Field\FieldConfigInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Update the field storage configuration to set the encryption state.
+ *
+ * @param string $entity_type
+ *   The entity type.
+ * @param \Drupal\Core\Field\FieldConfigInterface $field_config
+ *   The field storage config entity.
+ * @param array $form
+ *   The complete form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function field_encrypt_form_field_add_form_builder(string $entity_type, FieldConfigInterface $field_config, array &$form, FormStateInterface $form_state): void {
+  $field_encryption_settings = $form_state->getValue('field_storage')['field_encrypt']['field_encrypt'];
+  $field_encryption_settings['encrypt'] = (bool) $field_encryption_settings['encrypt'];
+  /** @var \Drupal\field\FieldStorageConfigInterface $field_storage_config */
+  $field_storage_config = $field_config->getFieldStorageDefinition();
+
+  // If the form has the value, we set it.
+  if ($field_encryption_settings['encrypt']) {
+    foreach ($field_encryption_settings as $settings_key => $settings_value) {
+      $field_storage_config->setThirdPartySetting('field_encrypt', $settings_key, $settings_value);
+    }
+  }
+  else {
+    // If there is no value, remove third party settings.
+    $field_storage_config->unsetThirdPartySetting('field_encrypt', 'encrypt');
+    $field_storage_config->unsetThirdPartySetting('field_encrypt', 'properties');
+  }
+}

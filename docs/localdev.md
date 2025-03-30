@@ -93,6 +93,12 @@ To remove the local project and its database:
 ddev stop --remove-data
 ```
 
+## PII
+Create a key so you can save PII field data.
+```shell
+openssl rand -base64 16 > keys/pii.key
+```
+
 ## Need Help?
 ----------
 

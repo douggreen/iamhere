@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Field Encrypt Test module install/schema/update hooks.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_install().
+ */
+function field_encrypt_test_install(bool $is_syncing): void {
+  module_set_weight('field_encrypt_test', -1000);
+}

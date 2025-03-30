@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Field Encrypt module install/schema/update hooks.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Site\Settings;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_install().
+ */
+function field_encrypt_install(bool $is_syncing): void {
+  // This might be set by previous versions of the module so ensure it is a
+  // clean value.
+  \Drupal::keyValue('field_encrypt')->set('entity_types', []);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function field_encrypt_uninstall(bool $is_syncing): void {
+  \Drupal::keyValue('field_encrypt')->delete('entity_types');
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function field_encrypt_requirements(string $phase): array {
+  $requirements = [];
+
+  if ($phase === 'update' || $phase === 'runtime') {
+    $schema = \Drupal::service('update.update_hook_registry')->getInstalledVersion('field_encrypt');
+
+    if ((int) $schema < 8300) {
+      $requirements['field_encrypt_update_to_v4'] = [
+        'title' => t('Field Encrypt'),
+        'severity' => REQUIREMENT_ERROR,
+        'value' => t('Updating to field_encrypt version 4 is not supported.'),
+        'description' => t('In order to upgrade you need to decrypt all your data on the previous version and uninstall the module.'),
+      ];
+    }
+  }
+
+  return $requirements;
+}
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function field_encrypt_update_last_removed(): int {
+  // This update never existed but this enforces new installs of the module get
+  // the correct schema version.
+  return 8300;
+}
+
+/**
+ * Move list of encrypted entity type IDs from state to a key value storage.
+ */
+function field_encrypt_update_8400(): ?TranslatableMarkup {
+  $entity_types = \Drupal::state()->get('field_encrypt.entity_types', []);
+  \Drupal::keyValue('field_encrypt')->set('entity_types', $entity_types);
+  \Drupal::state()->delete('field_encrypt.entity_types');
+
+  $settings = Settings::getAll();
+  if (array_key_exists('field_encrypt.use_eval_for_entity_hooks', $settings)) {
+    return new TranslatableMarkup('The setting "field_encrypt.use_eval_for_entity_hooks" can be removed from settings.php.');
+  }
+  return NULL;
+}

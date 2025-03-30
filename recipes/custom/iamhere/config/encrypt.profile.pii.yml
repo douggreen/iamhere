@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.pii
+  module:
+    - real_aes
+id: pii
+label: PII
+encryption_method: real_aes
+encryption_method_configuration: {  }
+encryption_key: pii

@@ -37,9 +37,11 @@ default:
   field_framework_benefits:
     -
       value: '<p>Promotes empathy, active listening, and personal connection. Requires willingness to be vulnerable and good partner matching.</p>'
+      format: 'content_format'
   field_framework_details:
     -
       value: '<p>Useful as a warm-up or when deepening empathy is the goal.</p>'
+      format: 'content_format'
   field_framework_how_to:
     -
       value: 'Pair up participants and explain the structure.'
@@ -56,7 +58,6 @@ default:
   field_framework_resources:
     -
       uri: 'https://ambitiousscienceteaching.org/ab-partner-talk-protocol/'
-      title: ''
       options: {  }
   field_framework_size:
     -
@@ -64,6 +65,7 @@ default:
   field_framework_summary:
     -
       value: '<p>A back-and-forth partner dialogue where each person takes turns sharing and paraphrasing the other’s viewpoint.</p>'
+      format: 'content_format'
   field_framework_time:
     -
       value: '30–60 minutes recommended. Minimum of 20 minutes.'

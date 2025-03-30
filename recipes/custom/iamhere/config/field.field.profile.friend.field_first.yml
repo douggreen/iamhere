@@ -4,6 +4,9 @@ dependencies:
   config:
     - field.storage.profile.field_first
     - profile.type.friend
+third_party_settings:
+  profile:
+    profile_private: true
 id: profile.friend.field_first
 field_name: field_first
 entity_type: profile

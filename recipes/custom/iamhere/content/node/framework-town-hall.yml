@@ -37,9 +37,11 @@ default:
   field_framework_benefits:
     -
       value: '<p>Encourages wide participation and transparency. Can handle large groups but requires strong facilitation and may limit depth of conversation.</p>'
+      format: 'content_format'
   field_framework_details:
     -
       value: '<p>Best used for civic, interfaith, or organizational transparency events.</p>'
+      format: 'content_format'
   field_framework_how_to:
     -
       value: 'Choose a clear topic or theme.'
@@ -58,7 +60,6 @@ default:
   field_framework_resources:
     -
       uri: 'https://socialinsilico.wordpress.com/2014/11/05/all-together-now-event-formats-for-discussions/'
-      title: ''
       options: {  }
   field_framework_size:
     -
@@ -66,6 +67,7 @@ default:
   field_framework_summary:
     -
       value: '<p>A large group forum where a moderator or panel fields questions from attendees on a common issue or theme.</p>'
+      format: 'content_format'
   field_framework_time:
     -
       value: '60–90 minutes recommended. Minimum of 45 minutes.'

@@ -3,6 +3,8 @@ type: drupal11
 docroot: docroot
 php_version: "8.3"
 webserver_type: nginx-fpm
+#router_http_port: "8000"
+#router_https_port: "443"
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
@@ -12,9 +14,13 @@ database:
 use_dns_when_possible: true
 composer_version: "2"
 web_environment:
+  - PHP_IDE_CONFIG=serverName=iamhere.local
   - DRUSH_OPTIONS_URI=http://iamhere.local
+  - DRUSH_ALLOW_XDEBUG=1
 corepack_enable: true
 project_tld: local
+working_dir:
+    web: /var/www/html/docroot
 
 # Key features of DDEV's config.yaml:
 
