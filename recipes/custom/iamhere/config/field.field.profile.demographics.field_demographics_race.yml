@@ -14,8 +14,8 @@ id: profile.demographics.field_demographics_race
 field_name: field_demographics_race
 entity_type: profile
 bundle: demographics
-label: 'Demographics Race'
-description: ''
+label: 'Race'
+description: 'Sharing your racial identity is optional and will never be shown -- this helps us create a more inclusive and diverse community; if none of the options feel right to you, feel free to leave it blank.'
 required: false
 translatable: false
 default_value: {  }

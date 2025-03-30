@@ -17,8 +17,77 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: jewish
-      label: Jewish
+      value: agnostic
+      label: Agnostic
+    -
+      value: atheist
+      label: Atheist
+    -
+      value: bahai
+      label: Baha'i
+    -
+      value: buddhism
+      label: Buddhist
+    -
+      value: baptist
+      label: Baptist
+    -
+      value: catholic
+      label: Catholic
+    -
+      value: christian
+      label: Christian
+    -
+      value: confucianism
+      label: Confucianism
+    -
+      value: hinduism
+      label: Hinduism
+    -
+      value: humanism
+      label: Humanism
+    -
+      value: islam
+      label: Islam
+    -
+      value: jainism
+      label: Jainism
+    -
+      value: judaism
+      label: Judaism
+    -
+      value: native
+      label: Native or Indigenous Beliefs
+    -
+      value: paganism
+      label: Paganism
+    -
+      value: rastafarianism
+      label: Rastafarianism
+    -
+      value: scientology
+      label: Scientology
+    -
+      value: shinto
+      label: Shinto
+    -
+      value: sikhism
+      label: Sikhism
+    -
+      value: spiritual
+      label: Spiritual but not religious
+    -
+      value: taoism
+      label: Taoism
+    -
+      value: unitarian
+      label: Unitarian Universalism
+    -
+      value: wicca
+      label: Wicca
+    -
+      value: zoroastrianism
+      label: Zoroastrianism
   allowed_values_function: ''
 module: options
 locked: false

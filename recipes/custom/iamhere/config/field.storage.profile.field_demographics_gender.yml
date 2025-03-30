@@ -17,11 +17,26 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: male
-      label: male
-    -
       value: female
-      label: female
+      label: Female
+    -
+      value: male
+      label: Male
+    -
+      value: genderqueer
+      label: Genderqueer
+    -
+      value: non_binary
+      label: Non-binary
+    -
+      value: transgender
+      label: Transgender
+    -
+      value: agender
+      label: Agender
+    -
+      value: genderfluid
+      label: Genderfluid
   allowed_values_function: ''
 module: options
 locked: false

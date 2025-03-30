@@ -14,8 +14,8 @@ id: profile.demographics.field_demographics_politics
 field_name: field_demographics_politics
 entity_type: profile
 bundle: demographics
-label: 'Demographics Politics'
-description: ''
+label: 'Politics'
+description: 'Sharing your political identity is optional and will never be shown—this helps us better understand the range of perspectives in our community; if none of the options feel right or you’d prefer not to answer, feel free to leave it blank.'
 required: false
 translatable: false
 default_value: {  }

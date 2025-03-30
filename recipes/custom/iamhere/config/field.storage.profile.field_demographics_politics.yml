@@ -19,6 +19,45 @@ settings:
     -
       value: conservative
       label: Conservative
+    -
+      value: anarchist
+      label: Anarchist
+    -
+      value: apolitical
+      label: Apolitical
+    -
+      value: conservative
+      label: Conservative
+    -
+      value: democrat
+      label: Democrat
+    -
+      value: green
+      label: Green Party
+    -
+      value: independent
+      label: Independent
+    -
+      value: liberal
+      label: Liberal
+    -
+      value: libertarian
+      label: Libertarian
+    -
+      value: maga
+      label: MAGA
+    -
+      value: moderate
+      label: Moderate
+    -
+      value: progressive
+      label: Progressive
+    -
+      value: republican
+      label: Republican
+    -
+      value: socialist
+      label: Socialist
   allowed_values_function: ''
 module: options
 locked: false

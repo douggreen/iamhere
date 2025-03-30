@@ -14,8 +14,8 @@ id: profile.demographics.field_demographics_gender
 field_name: field_demographics_gender
 entity_type: profile
 bundle: demographics
-label: 'Demographics Gender'
-description: ''
+label: 'Gender'
+description: 'Sharing your gender identity is completely optional and will never be shown—this helps us create a more welcoming and inclusive community; if your identity isn’t listed or you’d rather not say, feel free to leave it blank.'
 required: false
 translatable: false
 default_value: {  }

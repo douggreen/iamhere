@@ -17,8 +17,29 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: black
+      label: Black or African American
+    -
       value: white
       label: White
+    -
+      value: latine
+      label: Latine or Hispanic
+    -
+      value: asian
+      label: Asian
+    -
+      value: middle_eastern
+      label: Middle Eastern or North African
+    -
+      value: indigenous
+      label: Indigenous, Native American, or Alaska Native
+    -
+      value: pacific_islander
+      label: Native Hawaiian or Pacific Islander
+    -
+      value: multiracial
+      label: Multiracial
   allowed_values_function: ''
 module: options
 locked: false

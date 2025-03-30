@@ -14,8 +14,8 @@ id: profile.demographics.field_demographics_religion
 field_name: field_demographics_religion
 entity_type: profile
 bundle: demographics
-label: 'Demographics Religion'
-description: ''
+label: 'Religion'
+description: 'Sharing your religious or spiritual identity is optional and will never be shown—this helps us honor and reflect the diversity of our community; if none of the options resonate with you, feel free to leave it blank.'
 required: false
 translatable: false
 default_value: {  }
