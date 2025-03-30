@@ -12,6 +12,7 @@ dependencies:
   module:
     - address
     - datetime
+    - select_or_other
 id: profile.demographics.default
 targetEntityType: profile
 bundle: demographics
@@ -25,28 +26,52 @@ content:
       wrapper_type: fieldset
     third_party_settings: {  }
   field_demographics_gender:
-    type: options_select
+    type: select_or_other_list
     weight: 32
     region: content
-    settings: {  }
+    settings:
+      select_element_type: select_or_other_select
+      sort_options: ''
+      other_placeholder: ''
+      other_option: ''
+      other_field_label: ''
+      add_other_value_to_allowed_values: true
     third_party_settings: {  }
   field_demographics_politics:
-    type: options_select
+    type: select_or_other_list
     weight: 35
     region: content
-    settings: {  }
+    settings:
+      select_element_type: select_or_other_select
+      sort_options: ''
+      other_placeholder: ''
+      other_option: ''
+      other_field_label: ''
+      add_other_value_to_allowed_values: true
     third_party_settings: {  }
   field_demographics_race:
-    type: options_select
+    type: select_or_other_list
     weight: 33
     region: content
-    settings: {  }
+    settings:
+      select_element_type: select_or_other_select
+      sort_options: ''
+      other_placeholder: ''
+      other_option: ''
+      other_field_label: ''
+      add_other_value_to_allowed_values: true
     third_party_settings: {  }
   field_demographics_religion:
-    type: options_select
+    type: select_or_other_list
     weight: 34
     region: content
-    settings: {  }
+    settings:
+      select_element_type: select_or_other_select
+      sort_options: ''
+      other_placeholder: ''
+      other_option: ''
+      other_field_label: ''
+      add_other_value_to_allowed_values: true
     third_party_settings: {  }
   field_dob:
     type: datetime_default

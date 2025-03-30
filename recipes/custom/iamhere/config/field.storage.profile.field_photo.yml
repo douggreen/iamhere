@@ -1,12 +1,21 @@
+uuid: 0f520d2e-4da2-4ba1-849a-a64550de7fa7
 langcode: en
 status: true
 dependencies:
   module:
+    - field_encrypt
     - media
     - profile
 third_party_settings:
   profile:
     profile_private: true
+  field_encrypt:
+    encrypt: true
+    properties:
+      target_id: target_id
+      entity: '0'
+_core:
+  default_config_hash: ccemKVbgCEaW1Tb83nNQM2kgfc0fqkWG90WeZhTPvYA
 id: profile.field_photo
 field_name: field_photo
 entity_type: profile
