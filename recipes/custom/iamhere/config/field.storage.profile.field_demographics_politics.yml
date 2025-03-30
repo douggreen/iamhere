@@ -3,23 +3,24 @@ status: true
 dependencies:
   module:
     - field_encrypt
+    - options
     - profile
 third_party_settings:
-  profile:
-    profile_private: true
   field_encrypt:
     encrypt: true
     properties:
       value: value
-id: profile.field_last
-field_name: field_last
+id: profile.field_demographics_politics
+field_name: field_demographics_politics
 entity_type: profile
-type: string
+type: list_string
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+  allowed_values:
+    -
+      value: conservative
+      label: Conservative
+  allowed_values_function: ''
+module: options
 locked: false
 cardinality: 1
 translatable: true

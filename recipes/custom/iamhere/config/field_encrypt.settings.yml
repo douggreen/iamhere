@@ -1,0 +1,38 @@
+encryption_profile: pii
+make_entities_uncacheable: true
+default_properties:
+  address:
+    - address_line1
+    - address_line2
+    - address_line3
+  address_country: {  }
+  address_zone: {  }
+  datetime: {  }
+  timestamp: {  }
+  file: {  }
+  image: {  }
+  text: {  }
+  text_long: {  }
+  text_with_summary: {  }
+  boolean: {  }
+  email:
+    - value
+  link: {  }
+  'field_ui:entity_reference:media': {  }
+  telephone:
+    - value
+  decimal: {  }
+  float: {  }
+  integer: {  }
+  string: {  }
+  string_long: {  }
+  'field_ui:entity_reference:node': {  }
+  entity_reference: {  }
+  'field_ui:entity_reference:profile': {  }
+  'field_ui:entity_reference:taxonomy_term': {  }
+  'field_ui:entity_reference:user': {  }
+  webform: {  }
+  list_float: {  }
+  list_integer: {  }
+  list_string: {  }
+batch_size: 5

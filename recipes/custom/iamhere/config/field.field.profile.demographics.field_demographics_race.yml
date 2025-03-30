@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_demographics_race
+    - profile.type.demographics
+  module:
+    - options
+    - profile
+third_party_settings:
+  profile:
+    profile_private: true
+id: profile.demographics.field_demographics_race
+field_name: field_demographics_race
+entity_type: profile
+bundle: demographics
+label: 'Demographics Race'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -2,10 +2,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - field_encrypt
     - profile
 third_party_settings:
   profile:
     profile_private: true
+  field_encrypt:
+    encrypt: true
+    properties:
+      value: value
 id: profile.field_first
 field_name: field_first
 entity_type: profile
