@@ -50,11 +50,35 @@ This structure allows the program to grow community by community, while keeping 
 
 ## Hosts and Meal Events
 
-- **Hosting**: IAH Friends can volunteer to host meals, specifying the date, time, number of guests, an optional note about the food (e.g. potluck, vegetarian, cultural dish), and an optional theme (social or any of *Possible Discussion Frameworks*). Meals can happen in IAH Friends' homes (encouraged) or participating restaurants.
+- **Hosting**: IAH Friends can volunteer to host meals, specifying the date, time, number of guests, an optional note about the food (e.g. potluck, vegetarian, cultural dish), and an optional theme (social or any of *Possible Discussion Frameworks*). Meals can happen in IAH Friends’ homes, at participating restaurants, or as organizationally-supported events in shared spaces.
 
 - **Event Notification**: Once a meal event is scheduled, the program will notify all IAH Friends about the available opportunity without disclosing the IAH Host’s identity, organizations, or connections. The IAH Platform will attempt to invite random IAH Friends across organizations to create a diverse group and expand the invites as necessary to fill the event.
 
 - **Guest Selection**: IAH Friends can request to join a meal event, and IAH Hosts have the discretion to accept or decline these requests. Rejections do not reflect on the IAH Hosts rating; repeated rejections are reviewed by the Organizational or Community Organizer.
+
+---
+
+## Hosting Options
+
+To make shared meals accessible and inclusive for all, “I am Here” offers three primary hosting models:
+
+- **Home-Hosted Dinners**: Hosted in the home of an IAH Friend, this is the most intimate and personal option. The host provides a safe, welcoming space, often with a potluck or home-cooked meal. This option fosters deeper personal connection and cultural sharing.
+
+- **Restaurant-Supported Dinners**: Held at participating restaurants that support the program’s mission, these meals allow for community visibility and reduce the burden on hosts. Restaurants may offer private or semi-private dining areas at reduced cost or as a donation.
+
+- **Organizationally-Supported Dinners**: Two or more partnering organizations (e.g., a mosque and a church, or a college club and a civic group) co-host a dinner at one of their facilities. Leaders from each organization coordinate the meal, and each group brings members to the table. These events target 20 participants and are excellent for community bridge-building.
+ 
+---
+
+## Guest Grouping Models
+
+“I am Here” meals are built around relational trust and community diversity. Guests may be invited through three models:
+
+- **Randomized Diverse Groups**: Most meals are filled through the IAH Platform’s invitation system, which promotes interaction between people from different organizations, backgrounds, and beliefs.
+
+- **Organizational Groupings**: In this model, specific groups partner to host and populate a meal—such as a synagogue and a church, or a university club and a civic organization. Organizers aim for balance, often with each group contributing a similar number of attendees.
+
+- **Continuing Cohorts**: After a successful dinner, some groups may wish to continue meeting together as a standing cohort. These “friend groups” can schedule recurring meals to deepen their relationships and continue the spirit of shared dialogue.
 
 ---
 
