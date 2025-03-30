@@ -180,6 +180,7 @@ class ComposerStaticInite071d3a8838e60f3bbe0de1a6dfbac8c
         'D' => 
         array (
             'Drush\\' => 6,
+            'Drupal\\email_registration\\Component\\' => 36,
             'Drupal\\automatic_updates\\Development\\' => 37,
             'Drupal\\RecipeKit\\Installer\\' => 27,
             'Drupal\\Core\\' => 12,
@@ -574,6 +575,10 @@ class ComposerStaticInite071d3a8838e60f3bbe0de1a6dfbac8c
         'Drush\\' => 
         array (
             0 => __DIR__ . '/..' . '/drush/drush/src',
+        ),
+        'Drupal\\email_registration\\Component\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/docroot/modules/contrib/email_registration/lib',
         ),
         'Drupal\\automatic_updates\\Development\\' => 
         array (
@@ -3481,6 +3486,7 @@ class ComposerStaticInite071d3a8838e60f3bbe0de1a6dfbac8c
         'Drupal\\RecipeKit\\Installer\\Form\\SiteNameForm' => __DIR__ . '/..' . '/drupal/recipe_installer_kit/src/Form/SiteNameForm.php',
         'Drupal\\RecipeKit\\Installer\\Hooks' => __DIR__ . '/..' . '/drupal/recipe_installer_kit/src/Hooks.php',
         'Drupal\\RecipeKit\\Installer\\Messenger' => __DIR__ . '/..' . '/drupal/recipe_installer_kit/src/Messenger.php',
+        'Drupal\\email_registration\\Component\\DrupalExtension\\EmailRegistrationAuthenticationManager' => __DIR__ . '/../..' . '/docroot/modules/contrib/email_registration/lib/DrupalExtension/EmailRegistrationAuthenticationManager.php',
         'Drush\\Application' => __DIR__ . '/..' . '/drush/drush/src/Application.php',
         'Drush\\Attributes\\Argument' => __DIR__ . '/..' . '/drush/drush/src/Attributes/Argument.php',
         'Drush\\Attributes\\Bootstrap' => __DIR__ . '/..' . '/drush/drush/src/Attributes/Bootstrap.php',

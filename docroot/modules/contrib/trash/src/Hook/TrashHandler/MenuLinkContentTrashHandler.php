@@ -24,9 +24,11 @@ class MenuLinkContentTrashHandler extends DefaultTrashHandler implements EventSu
   /**
    * {@inheritdoc}
    */
-  public function preTrashDelete(EntityInterface $entity): void {
-    parent::preTrashDelete($entity);
+  public function postTrashDelete(EntityInterface $entity): void {
+    parent::postTrashDelete($entity);
 
+    // This needs to happen *after* the menu link is trashed, so its menu_tree
+    // entry can be deleted.
     /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $entity */
     $entity::preDelete($this->entityTypeManager->getStorage('menu_link_content'), [$entity]);
   }

@@ -2769,6 +2769,7 @@ return array(
     'Drupal\\RecipeKit\\Installer\\Form\\SiteNameForm' => $vendorDir . '/drupal/recipe_installer_kit/src/Form/SiteNameForm.php',
     'Drupal\\RecipeKit\\Installer\\Hooks' => $vendorDir . '/drupal/recipe_installer_kit/src/Hooks.php',
     'Drupal\\RecipeKit\\Installer\\Messenger' => $vendorDir . '/drupal/recipe_installer_kit/src/Messenger.php',
+    'Drupal\\email_registration\\Component\\DrupalExtension\\EmailRegistrationAuthenticationManager' => $baseDir . '/docroot/modules/contrib/email_registration/lib/DrupalExtension/EmailRegistrationAuthenticationManager.php',
     'Drush\\Application' => $vendorDir . '/drush/drush/src/Application.php',
     'Drush\\Attributes\\Argument' => $vendorDir . '/drush/drush/src/Attributes/Argument.php',
     'Drush\\Attributes\\Bootstrap' => $vendorDir . '/drush/drush/src/Attributes/Bootstrap.php',

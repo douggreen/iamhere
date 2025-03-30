@@ -5,11 +5,11 @@ install:
   - address
   - ai
   - default_content
+  - email_registration
   - entity
   - field_encrypt
   - flag
   - key
-  - privatemsg
   - profile
   - real_aes
   - select_or_other
@@ -93,7 +93,6 @@ config:
       - user.role.ambassador
       - user.role.friend
       - user.role.organizer
-      - core.entity_form_display.user.user.register
   actions:
     system.site:
       simpleConfigUpdate:
@@ -103,3 +102,9 @@ config:
     drupal_cms_olivero.settings:
       simpleConfigUpdate:
         base_primary_color: '#9ae41b'
+    user.settings:
+      simpleConfigUpdate:
+        register: 'visitors'
+    email_registration.settings:
+      simpleConfigUpdate:
+        login_with_username: true

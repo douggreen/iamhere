@@ -7,6 +7,6 @@ display_label: 'Community Organizer'
 multiple: false
 registration: false
 roles:
-  authenticated: authenticated
+  organizer: organizer
 allow_revisions: false
 new_revision: false

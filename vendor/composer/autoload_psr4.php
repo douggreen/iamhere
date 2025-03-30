@@ -94,6 +94,7 @@ return array(
     'Geocoder\\' => array($vendorDir . '/willdurand/geocoder'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'Drush\\' => array($vendorDir . '/drush/drush/src'),
+    'Drupal\\email_registration\\Component\\' => array($baseDir . '/docroot/modules/contrib/email_registration/lib'),
     'Drupal\\automatic_updates\\Development\\' => array($baseDir . '/docroot/modules/contrib/automatic_updates/scripts/src'),
     'Drupal\\RecipeKit\\Installer\\' => array($vendorDir . '/drupal/recipe_installer_kit/src'),
     'Drupal\\Core\\' => array($baseDir . '/docroot/core/lib/Drupal/Core'),

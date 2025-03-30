@@ -7,6 +7,6 @@ display_label: 'Organization Ambassador'
 multiple: false
 registration: false
 roles:
-  authenticated: authenticated
+  ambassador: ambassador
 allow_revisions: false
 new_revision: false

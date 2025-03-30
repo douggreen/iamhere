@@ -91,6 +91,12 @@ class TrashServiceProvider extends ServiceProviderBase {
         ->addArgument(new Reference('trash.inline_block.usage.inner'))
         ->addArgument(new Reference('trash.manager'));
     }
+
+    if ($container->hasDefinition('wse_menu.tree_storage')) {
+      $container->getDefinition('wse_menu.tree_storage')
+        ->setClass(TrashWseMenuTreeStorage::class)
+        ->addMethodCall('setTrashManager', [new Reference('trash.manager')]);
+    }
   }
 
 }

@@ -475,15 +475,6 @@ function trash_entity_view(array &$build, EntityInterface $entity, EntityViewDis
 }
 
 /**
- * Implements hook_ENTITY_TYPE_update() for 'menu_link_content'.
- */
-#[LegacyHook]
-function trash_menu_link_content_update(MenuLinkContentInterface $entity): void {
-  // @phpstan-ignore-next-line
-  \Drupal::service('trash.manager')->getHandler('menu_link_content')?->entityUpdate($entity);
-}
-
-/**
  * Implements hook_cron().
  */
 function trash_cron() {
